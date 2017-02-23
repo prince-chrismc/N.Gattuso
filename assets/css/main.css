@@ -20,7 +20,7 @@ body
     position: absolute;
     width: 95%;
     height: 35px;
-    background-color: black;
+    background-color: #111;
     color: white;
     padding: 10px 2% 10px 3%;
     line-height: 35px;
@@ -57,9 +57,13 @@ body
     width: auto;
     height: 95%;
     transition: margin-right .5s; /* for transition */
-    background-color: darkslategray;
+    background-color: #1E2832;
+    color: #111;
     padding: 55px 50px 50px 50px;
     text-align: center;
+    background-attachment: fixed;
+    background-image: url("../../images/photo-crane.jpe");
+    background-size: cover;
 }
 
 .logo {
