@@ -1,68 +1,67 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-	<title>DJ N.Gattuso</title>
-	<meta name="author" content="Christopher McArthur"/>
-	<meta name="description" content="DJ N.Gattuso"/>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+    <head>
+        <title>DJ N.Gattuso</title>
+        <meta name="author" content="Christopher McArthur"/>
+        <meta name="description" content="DJ N.Gattuso"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <!-- CSS -->
         <link rel="stylesheet" href="assets/css/normalize.css"/>
         <link rel="stylesheet" href="assets/css/main.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
-        
+
         <!-- Web Icon -->
         <link rel="shortcut icon" href="images/music-note.png"/>
-        
+
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/bd21c09c7b.js"></script>
         
         <!-- Scripts -->
-	<script src="https://use.fontawesome.com/bd21c09c7b.js"></script>
-	</head>
-  <body>
-    <!-- Header -->
-    <header id="header" class="alt">
-        <h1><a href="index.html">DJ N.Gattuso</a></h1>
-        <span class="menu" onclick="openNav()">&#9776; Menu</span>
-    </header>
+        <script>
+            function openNav() {
+            document.getElementById("nav").style.width = "250px";
+            document.getElementById("banner").style.marginRight = "250px";
+            }
 
-    <!-- Nav -->
-    <nav id="nav">
-        <ul class="links">
-            <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
-            <a class="icon fa-home" href="index.html">  Home</a>
-            <a class="icon fa-info" href="">  Information</a>
-            <a class="icon fa-photo" href="">  Gallery</a>
-            <a class="icon fa-code" href="">  Samples</a>
-            <a class="icon fa-paper-plane-o" href="#">  Contact</a>
-            <a class="icon fa-facebook" href="#/" >  Facebook</a>
-            <a class="icon fa-github" href="#" >  Soundcloud</a>
-            <a class="icon fa-youtube" href="#" >  Youtube</a>
-        </ul>
-    </nav>
-        
-	<!-- Banner -->
-	<section id="banner">
-	   <img class="logo" src="images/music-note.png"></img>
-		<h2>DJ N.Gattuso</h2>
-        <p>Know music - Know life</p>
-		<p>This site is currently under construction</p>
-      </section>
-      
-      <!-- Scripts -->
-      <script>
-      function openNav() {
-          document.getElementById("nav").style.width = "250px";
-          document.getElementById("banner").style.marginRight = "250px";
-      }
+            function closeNav() {
+            document.getElementById("nav").style.width = "0";
+            document.getElementById("banner").style.marginRight= "0";
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1><a href="index.html">DJ N.Gattuso</a></h1>
+            <span class="menu" onclick="openNav()">&#9776; Menu</span>
+        </header>
 
-      function closeNav() {
-          document.getElementById("nav").style.width = "0";
-          document.getElementById("banner").style.marginRight= "0";
-      }
-      </script>
-      
-  </body>
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+                <a class="fa fa-home" href="index.html">  Home</a>
+                <a class="fa fa-info" href="">  Information</a>
+                <a class="fa fa-photo" href="">  Gallery</a>
+                <a class="fa fa-music" href="">  Samples</a>
+                <a class="fa fa-paper-plane-o" href="#">  Contact</a>
+                <a class="fa fa-facebook" href="#/" >  Facebook</a>
+                <a class="fa fa-cloud" href="#" >  Soundcloud</a>
+                <a class="fa fa-youtube" href="#" >  Youtube</a>
+            </ul>
+        </nav>
+
+        <!-- Banner -->
+        <section id="banner">
+            <img class="logo" src="images/music-note.png"></img>
+            <h2>DJ N.Gattuso</h2>
+            <p>Know music - Know life</p>
+            <p>This site is currently under construction</p>
+        </section>
+    </body>
+</html>

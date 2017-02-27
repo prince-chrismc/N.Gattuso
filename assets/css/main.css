@@ -59,7 +59,8 @@ body
     transition: margin-right .5s; /* for transition */
     background-color: #1E2832;
     color: #111;
-    padding: 55px 50px 50px 50px;
+    margin-top: 55px;
+    padding: 50px 50px 50px 50px;
     text-align: center;
     background-attachment: fixed;
     background-image: url("../../images/photo-crane.jpe");
@@ -68,7 +69,9 @@ body
 
 .logo {
     margin: 15px;
-    padding: 5px;
+    padding: 15px;
+    border: 2px solid #111;
+    border-radius: 5px;
 }
 
 /* Nav Menu */
