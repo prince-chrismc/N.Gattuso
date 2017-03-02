@@ -38,30 +38,37 @@
         <!-- Header -->
         <header id="header" class="alt">
             <h1><a href="index.html">DJ N.Gattuso</a></h1>
-            <span class="menu" onclick="openNav()">&#9776; Menu</span>
+            <span class="menu" href="javascript:void(0)" onclick="openNav()">&#9776; Menu</span>
         </header>
 
         <!-- Nav -->
         <nav id="nav">
-            <ul class="links">
-                <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
-                <a class="fa fa-home" href="index.html">  Home</a>
-                <a class="fa fa-info" href="">  Information</a>
-                <a class="fa fa-photo" href="">  Gallery</a>
-                <a class="fa fa-music" href="">  Samples</a>
-                <a class="fa fa-paper-plane-o" href="#">  Contact</a>
-                <a class="fa fa-facebook" href="#/" >  Facebook</a>
-                <a class="fa fa-cloud" href="#" >  Soundcloud</a>
-                <a class="fa fa-youtube" href="#" >  Youtube</a>
-            </ul>
+            <div class="links list-group">
+                <a class="close" href="javascript:void(0)" onclick="closeNav()"><i class="fa fa-times"></i></a>
+                <hr>
+                <a class="list-group-item" href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i>  Home</a>
+                <a class="list-group-item" href="#"><i class="fa fa-info fa-fw" aria-hidden="true"></i>  Information</a>
+                <a class="list-group-item" href="#"><i class="fa fa-photo fa-fw" aria-hidden="true"></i>  Gallery</a>
+                <a class="list-group-item" href="#"><i class="fa fa-music fa-fw" aria-hidden="true"></i>  Samples</a>
+                <a class="list-group-item" href="#"><i class="fa fa-paper-plane-o fa-fw" aria-hidden="true"></i>  Contact</a>
+                <a class="list-group-item" href="#"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i>  Facebook</a>
+                <a class="list-group-item" href="#"><i class="fa fa-cloud fa-fw" aria-hidden="true"></i>  Soundcloud</a>
+                <a class="list-group-item" href="#"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i> Youtube</a>
+            </div>
         </nav>
 
         <!-- Banner -->
         <section id="banner">
-            <img class="logo" src="images/music-note.png"></img>
+            <i class="logo fa fa-music fa-4x"></i>
+            <!-- <img class="logo" src="images/music-note.png"></img> -->
             <h2>DJ N.Gattuso</h2>
-            <p>Know music - Know life</p>
+            <p>K<red>no</red>w music - K<red>no</red>w life</p>
             <p>This site is currently under construction</p>
+            <button class="example3">Hello</button>
+            <button class="example1">Hello</button>
+            <button class="example2">Hello</button>
+            <button class="btn-2">Hover</button>
+            <button class="btn-5">Hover</button>
         </section>
     </body>
 </html>
