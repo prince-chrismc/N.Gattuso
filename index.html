@@ -5,19 +5,22 @@
         <meta name="author" content="Christopher McArthur"/>
         <meta name="description" content="DJ N.Gattuso"/>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        <!-- Web Icon -->
+        <link rel="shortcut icon" href="images/music-note.png"/>
 
         <!-- CSS -->
         <link rel="stylesheet" href="assets/css/normalize.css"/>
         <link rel="stylesheet" href="assets/css/main.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-
-        <!-- Web Icon -->
-        <link rel="shortcut icon" href="images/music-note.png"/>
-
+        
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+        
+        <!-- Formstone -->
+        <link rel="stylesheet" href="assets/css/Formstone/background.css"/>
+        
         <!-- Font Awesome -->
         <script src="https://use.fontawesome.com/bd21c09c7b.js"></script>
         
@@ -25,12 +28,9 @@
         <script>
             function openNav() {
             document.getElementById("nav").style.width = "250px";
-            document.getElementById("banner").style.marginRight = "250px";
             }
-
             function closeNav() {
             document.getElementById("nav").style.width = "0";
-            document.getElementById("banner").style.marginRight= "0";
             }
         </script>
     </head>
@@ -56,19 +56,26 @@
                 <a class="list-group-item" href="#"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i> Youtube</a>
             </div>
         </nav>
-
+        
+        
+        
+        
         <!-- Banner -->
         <section id="banner">
+            <div class="video fs-background fs-background-container fs-background-media"></div>
             <i class="logo fa fa-music fa-4x"></i>
             <!-- <img class="logo" src="images/music-note.png"></img> -->
             <h2>DJ N.Gattuso</h2>
             <p>K<red>no</red>w music - K<red>no</red>w life</p>
             <p>This site is currently under construction</p>
-            <button class="example3">Hello</button>
-            <button class="example1">Hello</button>
-            <button class="example2">Hello</button>
             <button class="btn-2">Hover</button>
             <button class="btn-5">Hover</button>
         </section>
+        
+        
+        <script src="assets/js/Formstone/core.js"></script>
+        <script src="assets/js/Formstone/background.js"></script>
+        <script src="assets/js/Formstone/transition.js"></script>
+                <script src="assets/js/main.js"></script>
     </body>
 </html>
