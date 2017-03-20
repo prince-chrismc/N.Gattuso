@@ -3,7 +3,9 @@
     $(".video").background({
         source: {
             poster: "./images/camera.jpg",
-            mp4: "./images/camera.mp4"
+            webm: "./images/bg-video.webm",
+            ogg: "./images/bg-video.ogv",
+            mp4: "./images/bg-video.mp4"
     }});
 })(jQuery);
 
