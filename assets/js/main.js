@@ -20,3 +20,9 @@ setInterval(function() {
     .end()
     .appendTo('#slideshow');
 }, 5000);
+
+
+// imageLoad
+$('#slideshow').imagesLoaded( { background: true }, function() {
+  console.log('#container background image loaded');
+});
