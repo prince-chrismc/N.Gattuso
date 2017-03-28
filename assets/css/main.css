@@ -15,35 +15,37 @@ body
     margin: 0;
     padding: 0;
     border: 0;
-    background-color: #111;
     overflow-y: auto;
 }
 
 /* Header */
 
-#header{
+header{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 3em;
+    height: 4em;
     background-color: #111;
     color: white;
-    padding: 0.25em 0em 0.25em 0em;
+    padding: 0.5em 0em 0.5em 0em;
     line-height: 2em;
     z-index: 3;
+    font-family: 'Roboto', sans-serif;
 }
 
-#header h1 {
+header h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 2em;
+    left: 1em;
     margin: 0;
     padding: 0;
+    line-height: 3em;
+    font-size: 3em;
 }
 
-#header a {
+header a, a:hover, a:focus {
     margin: 0;
     padding: 0;
     border: 0;
@@ -51,7 +53,7 @@ body
     text-decoration: none;
 }
 
-#header .menu {
+header .menu {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -60,13 +62,25 @@ body
     padding: 0;
     cursor:pointer;
     display: inline;
-    font-size: 1.5em;
 }
 
+@media screen and (max-width: 980px) {
+    header h1{
+        font-size: 2em;
+        line-height: 2em;
+    }
+    
+    header .menu{
+        font-size: 1.5em;
+    }
+}
+
+
 /* Background */
-#video{
-    width: auto;
+.video{
+    bottom: 0;
     height: auto;
+    padding-top: 3.5em;
 }
 
 /* Banner */
@@ -81,11 +95,12 @@ body
     transition: margin-right .5s; /* for transition */
     background-color: transparent;
     color: white;
-    margin-top: 3.5em;
-    margin-bottom: 1em;
-    padding: 3.5em;
+    margin-top: 4em;
+    margin-bottom: 2em;
+    padding: 4em;
     text-align: center;
     z-index: 1;
+    font-family: 'Roboto', sans-serif;
 }
 
 #banner .logo {
@@ -95,16 +110,35 @@ body
     padding: 15px;
     border: 2px solid white;
     border-radius: 5px;
+    box-sizing: content-box;
+}
+
+#banner h2{
+    font-size: 1.75em;
+    line-height: 1.75em;
+} 
+
+#banner p{
+    font-size: 1.25em;
+    line-height: 1.25em;
 }
 
 #banner p red{
     color: red;
 }
 
-#banner .video{
+@media screen and (max-width: 980px) {
+    #banner h2{
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
     
-  background: #111;
+    #banner p{
+    font-size: 1em;
+    line-height: 1em;
+    }
 }
+
 
 /* Nav Menu */
 #nav {
@@ -116,13 +150,13 @@ body
     right: 0;
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 3.5em;
+    padding-top: 4.5em;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
 #nav .links{
-    margin-left: 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -133,12 +167,18 @@ body
     font-size: 25px;
     color: white;
     display: block;
-    transition: 0.3s
+    transition: 0.3s;
+    border:0;
+    background-color: transparent;
 }
 
-/* close buttons */
 #nav .close{
     text-align: right;
+    opacity: 1;
+    float: none;
+    line-height: 2em;
+    text-shadow: 0;
+    text-shadow: 0 0 20px #656565;
 }
 
 #nav .close:hover{
