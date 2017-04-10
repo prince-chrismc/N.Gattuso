@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Shield UI Demos</title>
+    <link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+</head>
+<body class="theme-light">
+<div>
+    <div class="container">
+        <div id="progress" style="width: 200px; height: 200px; margin-bottom: 10px;"></div>
+        <button id="start">Start Timer</button>
+        <button id="stop">Stop Timer</button>
+    </div>
+</div>
+<style>
+    .container {
+        width:200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<script type="text/javascript">
+    jQuery(function ($) {
+        var timer = null,
+            startTime = null,
+            progress = $("#progress").shieldProgressBar({
+                min: 0,
+                max: 60,
+                value: 60,
+                layout: "circular",
+                layoutOptions: {
+                    circular: {
+                        width: 40,
+                        borderWidth: 0,
+                        color: "#1E98E4"
+                    }
+                },
+                text: {
+                    enabled: true,
+                    template: '<span style="font-size:20px;">{0:n1}</span> seconds'
+                },
+                reversed: true
+            }).swidget();
+        $("#start").shieldButton({
+            events: {
+                click: function () {
+                    clearInterval(timer);
+                    startTime = Date.now();
+                    timer = setInterval(updateProgress, 100);
+                }
+            }
+        });
+        $("#stop").shieldButton({
+            events: {
+                click: function () {
+                    clearInterval(timer);
+                }
+            }
+        });
+        function updateProgress() {
+            var remaining = 60 - (Date.now() - startTime) / 1000;
+            progress.value(remaining);
+            if (remaining <= 0) {
+                clearInterval(timer);
+            }
+        }
+    });
+</script>
+</body>
+</html>
