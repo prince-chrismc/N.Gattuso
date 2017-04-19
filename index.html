@@ -33,19 +33,22 @@
         <!-- Scripts -->
         <script>
             function openNav() {
-            document.getElementById("nav").style.width = "250px";
+            document.getElementById("nav").style.right = "0px";
             }
             function closeNav() {
-            document.getElementById("nav").style.width = "0";
+            document.getElementById("nav").style.right = "-350px";
             }
         </script>
     </head>
     <body>
         <!-- Header -->
-        <header>
-            <h1><a href="index.html">DJ N.Gattuso</a></h1>
+        <header class="navbar navbar-default navbar-static-top">
+            <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">DJ N.Gattuso</a>
+            </div>
             <span class="menu" href="javascript:void(0)" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
-        </header>
+        </header>        
 
         <!-- Nav -->
         <nav id="nav">
@@ -70,20 +73,21 @@
             <div id="slide2" class="fs-background fs-background-container fs-background-element"></div>
             <div id="slide3" class="fs-background fs-background-container fs-background-element"></div>
             <div id="slide4" class="fs-background fs-background-container fs-background-element"></div>
-            <div></div>
-            <div></div>
+            <div id="slide5" class="fs-background fs-background-container fs-background-element"></divid></div>
         </div>
-        
-        
+                
         <!-- Banner -->
         <section id="banner">
-            <i class="logo fa fa-music fa-4x"></i>
-            <!-- <img class="logo" src="images/music-note.png"></img> -->
-            <h2>DJ N.Gattuso</h2>
-            <p>K<red>no</red>w music - K<red>no</red>w life</p>
-            <p>This site is currently under construction</p>
-            <button class="btn-2">Hover</button>
-            <button class="btn-5">Hover</button>
+            <div class="content-centered dark">
+                <i class="fa fa-music fa-4x"></i>
+                <h2>DJ N.Gattuso</h2>
+                <hr>
+                <p>K<red>no</red>w music - K<red>no</red>w life</p>
+                <p>Up and comming MTL DJ for your special events</p>
+                <p>This site is currently under construction</p>
+                <br>
+                <button class="main-btn">Discover</button>
+            </div>
         </section>        
         
         <!-- Scripts -->
