@@ -45,6 +45,7 @@ header{
 
 .navbar-default .navbar-brand
 {
+    margin-left: 2em;
     font-size: 2em;
     color: white;
 }
@@ -77,6 +78,10 @@ header .menu {
 }
 
 @media screen and (max-width: 786px) {
+    .navbar-default .navbar-brand{
+        margin-left: 1em;
+    }
+
     header .menu {
         right: 1em;
     }
