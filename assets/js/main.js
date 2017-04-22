@@ -2,7 +2,7 @@
 (function($) {
     $(".video").background({
         source: {
-            poster: "./images/ex-equip.jpg",
+            poster: "./images/ex_equip.jpg",
             webm: "./images/bg-video.webm",
             ogg: "./images/bg-video.ogv",
             mp4: "./images/bg-video.mp4"
