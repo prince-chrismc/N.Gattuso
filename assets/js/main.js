@@ -2,7 +2,7 @@
 (function($) {
     $(".video").background({
         source: {
-            poster: "./images/camera.jpg",
+            poster: "./images/ex-equip.jpg",
             webm: "./images/bg-video.webm",
             ogg: "./images/bg-video.ogv",
             mp4: "./images/bg-video.mp4"
@@ -34,7 +34,7 @@ $('#container').imagesLoaded()
   })
   .progress( function( instance, image ) {
     var result = image.isLoaded ? 'loaded' : 'broken';
-    console.log( 'image is ' + result + ' for ' + image.img.src );
+    console.log('image is ' + result + ' for ' + image.img.src );
   });
 
 
