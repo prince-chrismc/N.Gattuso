@@ -1,3 +1,16 @@
+/* colors
+
+lighest to darkest
+0059b3 -- hover in nav
+004d99
+004080
+003366 =)
+00264d -- inner gradient
+001a33 -- middle gradient
+000d1a -- outter gradient
+
+*/
+
 /* basics */
 html{
     height: 100%;
@@ -42,6 +55,7 @@ header{
 .navbar-default{
     background-color: #111;
     border-color: black;
+    margin: 0;
 }
 
 .navbar-default .navbar-brand
@@ -100,13 +114,13 @@ header .menu {
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 4.5em;
     transition: all 0.5s ease-in; /* 0.5 second transition effect to slide in the sidenav */
-    -webkit-box-shadow: -5px 2px 20px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: -5px 2px 20px 0px rgba(0,0,0,0.75);
-    box-shadow: -5px 2px 20px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.75);
 }
 
 /* The navigation menu links */
-#nav .links{
+#nav .links {
     margin: 0;
     padding: 0;
 }
@@ -119,37 +133,41 @@ header .menu {
     color: white;
     display: block;
     transition: none;
-    border:0;
+    border: 0;
     background-color: transparent;
 }
 
-#nav .close{
+#nav a:hover {
+    color:#0059b3;
+    text-shadow: 0 0 20px #656565;
+}
+
+#nav .close {
     text-align: right;
     opacity: 1;
     float: none;
     line-height: 2em;
-    text-shadow: 0;
     text-shadow: 0 0 20px #656565;
 }
 
-#nav .close:hover{
+#nav .close:hover {
     color: darkred;
 }
 
-#nav hr{
+#nav hr {
     margin: 10px;
     border-color: #222;
 }
 
 .main-btn {
-  border: 1px solid;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
-  outline: 1px solid;
-  outline-color: rgba(255, 255, 255, 0.5);
-  outline-offset: 0px;
-  text-shadow: none;
-  -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, 0.5);
+    outline-offset: 0px;
+    text-shadow: none;
+    -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
     padding: 15px;
     color: white;
     background-color: transparent;
@@ -167,7 +185,7 @@ header .menu {
 }
 
 @media screen and (max-width: 786px) {
-    .main-btn{
+    .main-btn {
         padding: 10px;
         font-size: 20px;
         width: 100px;
@@ -175,8 +193,58 @@ header .menu {
     }
 }
 
+.main-content {
+    padding: 2em 0 2em 0;
+    color: white;
+    background-color: #111;
+    background: -webkit-radial-gradient(circle, #00264d, #001a33, #000d1a); /* For Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(circle, #00264d, #001a33, #000d1a); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, #00264d, #001a33, #000d1a); /* For Fx 3.6 to 15 */
+    background: radial-gradient(circle, #00264d, #001a33, #000d1a); /* Standard syntax (must be last) */
+}
+
+/* footer */
 footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
+    background-color: #111;
+    color: white;
+    padding: 15px;
+    -webkit-box-shadow: 0px -5px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -5px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px -5px 20px 0px rgba(0,0,0,0.75);
+}
+
+footer .icons {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 6px;
+    width: 100px;
+    height: 78px;
+    text-decoration: none;
+}
+
+footer .icons:hover {
+    background-color: #222;
+    color: #0059b3;
+    text-decoration: none;
+}
+
+footer .icons i {
+    display: block;
+    padding: 5px;
+}
+
+footer  hr {
+    margin: 10px 20% 25px 20%;
+    border-color: #222;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #0059b3;
+    text-decoration: none;
+}
