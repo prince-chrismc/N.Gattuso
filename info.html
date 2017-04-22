@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/css/normalize.css"/>
         <link rel="stylesheet" href="assets/css/common.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
 
@@ -36,11 +35,15 @@
     </head>
     <body>
         <!-- Header -->
-        <header class="navbar navbar-default navbar-static-top">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">DJ N.Gattuso</a>
+        <header class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="col-sm-4">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">DJ N.Gattuso</a>
+                    </div>
+                </div>
+                <div id="menu" class="menu" href="javascript:void(0)" onclick="openNav()"></div>
             </div>
-            <span id="menu" class="menu" href="javascript:void(0)" onclick="openNav()"></span>
         </header>
 
         <!-- Nav -->
@@ -54,7 +57,7 @@
                 <a class="list-group-item" href="samples.html"><i class="fa fa-music fa-fw" aria-hidden="true"></i>  Samples</a>
                 <a class="list-group-item" href="contact.html"><i class="fa fa-paper-plane-o fa-fw" aria-hidden="true"></i>  Contact</a>
                 <a class="list-group-item" href="#"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i>  Facebook</a>
-                <a class="list-group-item" href="#"><i class="fa fa-cloud fa-fw" aria-hidden="true"></i>  Soundcloud</a>
+                <a class="list-group-item" href="#"><i class="fa fa-soundcloud fa-fw" aria-hidden="true"></i>  Soundcloud</a>
                 <a class="list-group-item" href="#"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i> Youtube</a>
             </div>
         </nav>
@@ -62,14 +65,40 @@
         <div class="main-content">
             <div class="container">
                 <div class="col-sm-8">
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2"><img src="images/bg-selfie_bw.jpg" style="width: 100%; padding: 2em;"></div>
+                    <div class="row text-center">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <h1 class="title">DJ N.Gattuso</h1>
+                            <img src="images/bg-selfie_bw.jpg" style="width: 100%; padding: 2em;">
+                        </div>
                     </div>
                     <div class="row">
+                        <div class="row text-center">
+                            <h3 class="title"><i class="fa fa-info" aria-hidden="true"></i>  About</h3>
+                        </div>
                         <div class="col-sm-12"><p>Phasellus imperdiet lacus id mauris viverra vulputate. Proin eget tincidunt leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum viverra, turpis sed tempus bibendum, metus erat pharetra ipsum, eu finibus erat nibh sit amet felis. Nunc vehicula malesuada mi, quis accumsan tellus sagittis nec. Duis dapibus dignissim elit sed pretium. Pellentesque congue neque sed mauris sodales, a semper purus consectetur. Proin facilisis ex sit amet tellus molestie, ac consectetur tellus hendrerit. Integer aliquet imperdiet massa, nec tempor nunc luctus rhoncus. Sed fermentum quis elit nec lobortis. Vivamus eget molestie justo. Nulla luctus enim at urna ullamcorper, eget dapibus lorem mattis. Sed finibus quam sit amet fringilla ullamcorper. Donec ut venenatis sapien. Morbi nisi odio, dapibus sit amet interdum ac, pulvinar id nulla.</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="row text-center">
+                            <h3 class="title">Servies</h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="icons"><i class="fa fa-music fa-3x" aria-hidden="true"></i>DJ'ing</p>
+                            <p>Donec sapien velit, sodales vitae lectus eget, posuere finibus felis. Aenean ultrices mi vitae pulvinar.</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="icons"><i class="fa fa-calendar fa-3x" aria-hidden="true"></i>Events</p>
+                            <p>Sed nulla lacus, dapibus non purus a, commodo molestie nulla. Aenean vestibulum elit at erat.</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="icons"><i class="fa fa-plus fa-3x" aria-hidden="true"></i>Example</p>
+                            <p>Nulla scelerisque massa id bibendum tincidunt. Phasellus ut ex augue. Curabitur sit amet elit quis.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
+                    <div class="row text-center">
+                        <h3 class="title">Up Coming Events</h3>
+                    </div>
                     <p>Donec sollicitudin sagittis augue ut finibus. Sed mattis dui mattis, sollicitudin justo vitae, convallis leo. In enim lectus, ornare in ante eu, tempus elementum enim. Vestibulum in dignissim magna. Etiam nec felis nisi. Nullam justo turpis, aliquam in ante nec, feugiat finibus justo. Nulla facilisi.</p>
                     <p>Integer volutpat posuere libero ut venenatis. Nullam vel risus pretium, tristique justo in, tempus magna. Integer imperdiet semper quam vitae ultrices. Nunc at vulputate orci. Curabitur dictum mi et mattis eleifend. Ut lacinia lacus in elit aliquam dapibus. Nam congue elit ac pretium imperdiet. Donec eleifend a metus quis eleifend. Pellentesque mi ipsum, iaculis eget nibh a, dapibus facilisis libero. Curabitur aliquet dictum ex. Nam a congue justo. Vestibulum dictum, turpis nec pulvinar mollis, dui nisl pellentesque diam, vel dapibus massa sapien eget sapien. Phasellus imperdiet ullamcorper tortor, fringilla pharetra ligula fringilla eget. Maecenas laoreet venenatis urna, non luctus nisl molestie a.</p>
                     <p>Curabitur suscipit a dolor sed ullamcorper. Phasellus blandit urna in laoreet blandit. Pellentesque convallis magna vestibulum purus ornare, eu pulvinar erat rutrum. Duis et luctus tellus, eget iaculis erat. Sed suscipit aliquet ornare. Nullam interdum mauris ut risus bibendum, in volutpat orci tincidunt. Donec lacinia iaculis suscipit. Maecenas purus lacus, interdum ut dolor vitae, commodo mollis urna. In fermentum neque nibh, in dapibus odio lacinia at. Vestibulum a justo a orci lobortis varius. Cras vitae semper velit, eu vestibulum est. Nullam eros leo, congue quis tristique sit amet, tincidunt at metus. Aliquam placerat ipsum elementum, condimentum ex ut, lobortis nunc. Proin sit amet tortor accumsan, laoreet purus non, ultricies quam. Aliquam vel sagittis elit. Nulla purus nunc, laoreet vel mi id, accumsan vestibulum ante.</p>
@@ -84,7 +113,7 @@
                 Facebook
             </a>
             <a href="" class="icons">
-                <i class="fa fa-cloud fa-2x"></i>
+                <i class="fa fa-soundcloud fa-2x"></i>
                 SouncCloud
             </a>
             <a href="" class="icons">

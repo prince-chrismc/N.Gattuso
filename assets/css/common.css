@@ -60,7 +60,6 @@ header{
 
 .navbar-default .navbar-brand
 {
-    margin-left: 2em;
     font-size: 2em;
     color: white;
 }
@@ -82,37 +81,23 @@ header{
 header .menu {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     right: 2em;
+    transform: translateY(-50%);
+    -webkit-backface-visibility: hidden; /* fix chrome bug */
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     font-size: 1.5em;
-    padding: 0;
     cursor:pointer;
-    display: inline;
-    width: 100px;
-    text-align: right;
 }
 
-@media screen and (max-width: 786px) {
-    .navbar-default .navbar-brand{
-        margin-left: 1em;
-    }
-
-    header .menu {
-        right: 1em;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .navbar-default .navbar-brand{
-        margin-left: 0.5em;
-    }
-}
 /* Nav Menu */
 #nav {
     height: 100%; /* 100% Full-height */
     width: 250px;
     position: fixed; /* Stay in place */
-    z-index: 1001; /* Stay on top */
+    z-index: 1031; /* Stay on top */
     top: 0;
     right: -350px; /* -350px right pos - change this with JavaScript */
     background-color: #111; /* Black*/
@@ -199,13 +184,41 @@ header .menu {
 }
 
 .main-content {
-    padding: 2em 0 2em 0;
+    padding: 2em 0;
+    margin-top: 65px;
     color: white;
     background-color: #111;
     background: -webkit-radial-gradient(circle, #00264d, #001a33, #000d1a); /* For Safari 5.1 to 6.0 */
     background: -o-radial-gradient(circle, #00264d, #001a33, #000d1a); /* For Opera 11.6 to 12.0 */
     background: -moz-radial-gradient(circle, #00264d, #001a33, #000d1a); /* For Fx 3.6 to 15 */
     background: radial-gradient(circle, #00264d, #001a33, #000d1a); /* Standard syntax (must be last) */
+}
+
+.main-content .title {
+    display:inline-block;
+    text-align: center;
+}
+
+.main-content .title:after,
+.main-content .title:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    content: " ";
+    display: block;
+    margin: 5px auto;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-color: #fff;
+    width: 70%;
+}
+
+.main-content .icons {
+    text-align: center;
+}
+
+.main-content .icons i {
+    display: block;
+    margin: 10px auto;
 }
 
 /* footer */
@@ -227,6 +240,13 @@ footer .icons {
     width: 100px;
     height: 78px;
     text-decoration: none;
+}
+
+@media screen and (max-width: 400px)
+{
+    footer .icons {
+        margin: 0;
+    }
 }
 
 footer .icons:hover {
