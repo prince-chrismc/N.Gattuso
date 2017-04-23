@@ -37,6 +37,9 @@
 
 .carosel {
     width: 100%;
+    min-height: 50%;
+    height: 50%;
+    max-height: 50%;
     position: relative;
 }
 
@@ -52,6 +55,12 @@
     display: inline-block;
 }
 
+            @media screen and (max-width: 768px){
+                .carosel-item {
+                    width: 100%;
+                }
+            }
+
 .next,
 .prev{
     opacity: 0.75;
@@ -59,6 +68,7 @@
     -ms-transform: scale(0.75,0.75); /* IE 9 */
     -webkit-transform: scale(0.75,0.75); /* Safari */
     transform: scale(0.75,0.75); /* Standard syntax */
+    z-index: 3;
 }
 
 .active{
@@ -67,6 +77,7 @@
     -ms-transform: scale(1.25,1.25); /* IE 9 */
     -webkit-transform: scale(1.25,1.25); /* Safari */
     transform: scale(1.25,1.25); /* Standard syntax */
+    z-index: 5;
 }
 
 .carosel-control {
@@ -75,6 +86,9 @@
   padding: 15px;
   box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.5);
   transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.75);
   font-size: 30px;
@@ -95,7 +109,6 @@
   text-decoration: none;
   color: white;
 }
-
 
 
      </style>
@@ -130,33 +143,19 @@
         </nav>
 
         <div class="main-content">
-            <div class="container">
-                <div class="col-sm-12">
-                <div class="row">
-
-<div class="carosel slide" id="myCarousel">
-
-  <a class="carosel-control carosel-control-left glyphicon glyphicon-chevron-left" href="#"></a>
-  <div class="carosel-inner">
-    <img class="carosel-item" src="http://placehold.it/500/bbbbbb/fff&amp;text=1" />
-    <img class="carosel-item" src="http://placehold.it/500/fcfcfc/333&amp;text=2" />
-    <img class="carosel-item" src="http://placehold.it/500/bbbbbb/fff&amp;text=3" />
-    <img class="carosel-item" src="http://placehold.it/500/f477f4/fff&amp;text=4" />
-    <img class="carosel-item" src="http://placehold.it/500/fcfcfc/333&amp;text=5" />
-    <img class="carosel-item" src="http://placehold.it/500/f477f4/fff&amp;text=6" />
-  </div>
-  <a class="carosel-control carosel-control-right glyphicon glyphicon-chevron-right" href="#"></a>
-</div>
-
-
-
-                </div>
-
-
-
-                </div>
-
-
+            <div class="container-fluid">
+                        <div class="carosel">
+                            <a class="carosel-control carosel-control-left glyphicon glyphicon-chevron-left" href="#"></a>
+                            <div class="carosel-inner">
+                                <img class="carosel-item" src="http://placehold.it/500/bbbbbb/fff&amp;text=1" />
+                                <img class="carosel-item" src="http://placehold.it/500/fcfcfc/333&amp;text=2" />
+                                <img class="carosel-item" src="http://placehold.it/500/bbbbbb/fff&amp;text=3" />
+                                <img class="carosel-item" src="http://placehold.it/500/f477f4/fff&amp;text=4" />
+                                <img class="carosel-item" src="http://placehold.it/500/fcfcfc/333&amp;text=5" />
+                                <img class="carosel-item" src="http://placehold.it/500/f477f4/fff&amp;text=6" />
+                            </div>
+                            <a class="carosel-control carosel-control-right glyphicon glyphicon-chevron-right" href="#"></a>
+                        </div>
             </div>
         </div>
 
@@ -182,31 +181,70 @@
         <script src="assets/js/header.js"></script>
         <script>
             $(document).ready(function() {
-                $(".carosel-inner").children(":first").addClass("prev");
-                $(".carosel-inner").children(":first").next().addClass("active");
-                $(".carosel-inner").children(":first").next().next().addClass("next");
+                if($(document).width() <= 768) {
+                    $(".carosel-inner").children(":first").addClass("active");
+                }
+                else{
+                    $(".carosel-inner").children(":first").addClass("prev");
+                    $(".carosel-inner").children(":first").next().addClass("active");
+                    $(".carosel-inner").children(":first").next().next().addClass("next");
+                }
+            });
+
+            $(window).resize(function() {
+                if($(document).width() <= 768) {
+                    $(".carosel-inner").children(":first").removeClass("prev");
+                    $(".carosel-inner").children(":first").addClass("active");
+                    $(".carosel-inner").children(":first").next().removeClass("active");
+                    $(".carosel-inner").children(":first").next().next().removeClass("next");
+                }
+                else{
+                    $(".carosel-inner").children(":first").removeClass("active");
+                    $(".carosel-inner").children(":first").addClass("prev");
+                    $(".carosel-inner").children(":first").next().addClass("active");
+                    $(".carosel-inner").children(":first").next().next().addClass("next");
+                }
             });
 
 
             $('.carosel-control-right').click(function() {
                 $(this).blur();
-                $(this).parent().find('.carosel-item').first().removeClass("prev");
-                $(this).parent().find('.carosel-item').first().next().removeClass("active");
-                $(this).parent().find('.carosel-item').first().next().next().removeClass("next");
-                $(this).parent().find('.carosel-item').first().insertAfter($(this).parent().find('.carosel-item').last());
-                $(this).parent().find('.carosel-item').first().addClass("prev");
-                $(this).parent().find('.carosel-item').first().next().addClass("active");
-                $(this).parent().find('.carosel-item').first().next().next().addClass("next");
+
+                if($(document).width() <= 768) {
+                    $(this).parent().find('.carosel-item').first().removeClass("active");
+                    $(this).parent().find('.carosel-item').first().insertAfter($(this).parent().find('.carosel-item').last());
+                    $(this).parent().find('.carosel-item').first().addClass("active");
+                }
+                else {
+                    $(this).parent().find('.carosel-item').first().removeClass("prev");
+                    $(this).parent().find('.carosel-item').first().next().removeClass("active");
+                    $(this).parent().find('.carosel-item').first().next().next().removeClass("next");
+                    $(this).parent().find('.carosel-item').first().insertAfter($(this).parent().find('.carosel-item').last());
+                    $(this).parent().find('.carosel-item').first().addClass("prev");
+                    $(this).parent().find('.carosel-item').first().next().addClass("active");
+                    $(this).parent().find('.carosel-item').first().next().next().addClass("next");
+                }
             });
+
             $('.carosel-control-left').click(function() {
                 $(this).blur();
-                $(this).parent().find('.carosel-item').first().removeClass("prev");
-                $(this).parent().find('.carosel-item').first().next().removeClass("active");
-                $(this).parent().find('.carosel-item').first().next().next().removeClass("next");
-                $(this).parent().find('.carosel-item').last().insertBefore($(this).parent().find('.carosel-item').first());
-                $(this).parent().find('.carosel-item').first().addClass("prev");
-                $(this).parent().find('.carosel-item').first().next().addClass("active");
-                $(this).parent().find('.carosel-item').first().next().next().addClass("next");
+
+                $(this).blur();
+
+                if($(document).width() <= 768) {
+                    $(this).parent().find('.carosel-item').first().removeClass("active");
+                    $(this).parent().find('.carosel-item').last().insertBefore($(this).parent().find('.carosel-item').first());
+                    $(this).parent().find('.carosel-item').first().addClass("active");
+                }
+                else {
+                    $(this).parent().find('.carosel-item').first().removeClass("prev");
+                    $(this).parent().find('.carosel-item').first().next().removeClass("active");
+                    $(this).parent().find('.carosel-item').first().next().next().removeClass("next");
+                    $(this).parent().find('.carosel-item').last().insertBefore($(this).parent().find('.carosel-item').first());
+                    $(this).parent().find('.carosel-item').first().addClass("prev");
+                    $(this).parent().find('.carosel-item').first().next().addClass("active");
+                    $(this).parent().find('.carosel-item').first().next().next().addClass("next");
+                }
             });
 
         </script>
