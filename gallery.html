@@ -110,6 +110,36 @@
   color: white;
 }
 
+.carousel-indicators {
+    display: block;
+  position: relative;
+    left: 0;
+  z-index: 3;
+  width: 100%;
+  padding-left: 0;
+    margin-top: 35px;
+  margin-left: 0;
+  text-align: center;
+  list-style: none;
+}
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255,0.25);
+    border: none;
+  border-radius: 0;
+}
+
+.carousel-indicators .active {
+            width: 10px;
+    height: 2px;
+    margin: 1px;
+            }
+
 
      </style>
     </head>
@@ -155,6 +185,14 @@
                                 <img class="carosel-item" src="http://placehold.it/500/f477f4/fff&amp;text=6" />
                             </div>
                             <a class="carosel-control carosel-control-right glyphicon glyphicon-chevron-right" href="#"></a>
+                            <ol class="carousel-indicators">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ol>
                         </div>
             </div>
         </div>
@@ -183,10 +221,12 @@
             $(document).ready(function() {
                 if($(document).width() <= 768) {
                     $(".carosel-inner").children(":first").addClass("active");
+                    $(".carousel-indicators").children(":first").addClass("active");
                 }
                 else{
                     $(".carosel-inner").children(":first").addClass("prev");
                     $(".carosel-inner").children(":first").next().addClass("active");
+                    $(".carousel-indicators").children(":first").next().addClass("active");
                     $(".carosel-inner").children(":first").next().next().addClass("next");
                 }
             });
@@ -224,6 +264,13 @@
                     $(this).parent().find('.carosel-item').first().next().addClass("active");
                     $(this).parent().find('.carosel-item').first().next().next().addClass("next");
                 }
+
+                var current = $(this).parent().find(".carousel-indicators").find(".active");
+                current.removeClass("active");
+                if(current.next().length > 0)
+                    current.next().addClass("active");
+                else
+                    $(".carousel-indicators").children(":first").addClass("active");
             });
 
             $('.carosel-control-left').click(function() {
@@ -245,6 +292,13 @@
                     $(this).parent().find('.carosel-item').first().next().addClass("active");
                     $(this).parent().find('.carosel-item').first().next().next().addClass("next");
                 }
+
+                var current = $(this).parent().find(".carousel-indicators").find(".active");
+                current.removeClass("active");
+                if(current.prev().length > 0)
+                    current.prev().addClass("active");
+                else
+                    $(".carousel-indicators").children(":last").addClass("active");
             });
 
         </script>
