@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>DJ N.Gattuso</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Christopher McArthur"/>
+        <meta name="description" content="DJ N.Gattuso"/>
+
+        <!-- Web Icon -->
+        <link rel="shortcut icon" href="images/music-note.png"/>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/common.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/bd21c09c7b.js"></script>
+
+        <!-- Scripts -->
+        <script>
+            function openNav() {
+            document.getElementById("nav").style.right = "0px";
+            }
+            function closeNav() {
+            document.getElementById("nav").style.right = "-350px";
+            }
+        </script>
+
+        <style>
+
+.carosel {
+    width: 100%;
+    position: relative;
+}
+
+.carosel-inner {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.carosel-item {
+    opacity: 0;
+    width: 33.333%;
+    display: inline-block;
+}
+
+.next,
+.prev{
+    opacity: 0.75;
+    -moz-transform: scale(0.75,0.75); /* FF */
+    -ms-transform: scale(0.75,0.75); /* IE 9 */
+    -webkit-transform: scale(0.75,0.75); /* Safari */
+    transform: scale(0.75,0.75); /* Standard syntax */
+}
+
+.active{
+    opacity: 1;
+    -moz-transform: scale(1.25,1.25); /* FF */
+    -ms-transform: scale(1.25,1.25); /* IE 9 */
+    -webkit-transform: scale(1.25,1.25); /* Safari */
+    transform: scale(1.25,1.25); /* Standard syntax */
+}
+
+.carosel-control {
+  position: absolute;
+  top: 50%;
+  padding: 15px;
+  box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.5);
+  transform: translateY(-50%);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 30px;
+  display: inline-block;
+    z-index: 10;
+}
+
+.carosel-control-left {
+  left: 15px;
+}
+
+.carosel-control-right {
+  right: 15px;
+}
+
+.carosel-control:active,
+.carosel-control:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+     </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="col-sm-4">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">DJ N.Gattuso</a>
+                    </div>
+                </div>
+                <div id="menu" class="menu" href="javascript:void(0)" onclick="openNav()"></div>
+            </div>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <div class="links list-group">
+                <a class="close" href="javascript:void(0)" onclick="closeNav()"><i class="fa fa-times"></i></a>
+                <hr>
+                <a class="list-group-item" href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i>  Home</a>
+                <a class="list-group-item" href="info.html"><i class="fa fa-info fa-fw" aria-hidden="true"></i>  Information</a>
+                <a class="list-group-item" href="gallery.html"><i class="fa fa-photo fa-fw" aria-hidden="true"></i>  Gallery</a>
+                <a class="list-group-item" href="samples.html"><i class="fa fa-music fa-fw" aria-hidden="true"></i>  Samples</a>
+                <a class="list-group-item" href="contact.html"><i class="fa fa-paper-plane-o fa-fw" aria-hidden="true"></i>  Contact</a>
+                <a class="list-group-item" href="#"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i>  Facebook</a>
+                <a class="list-group-item" href="#"><i class="fa fa-soundcloud fa-fw" aria-hidden="true"></i>  Soundcloud</a>
+                <a class="list-group-item" href="#"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i> YouTube</a>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <div class="container">
+                <div class="col-sm-12">
+                <div class="row">
+
+<div class="carosel slide" id="myCarousel">
+
+  <a class="carosel-control carosel-control-left glyphicon glyphicon-chevron-left" href="#"></a>
+  <div class="carosel-inner">
+    <img class="carosel-item" src="http://placehold.it/500/bbbbbb/fff&amp;text=1" />
+    <img class="carosel-item" src="http://placehold.it/500/fcfcfc/333&amp;text=2" />
+    <img class="carosel-item" src="http://placehold.it/500/bbbbbb/fff&amp;text=3" />
+    <img class="carosel-item" src="http://placehold.it/500/f477f4/fff&amp;text=4" />
+    <img class="carosel-item" src="http://placehold.it/500/fcfcfc/333&amp;text=5" />
+    <img class="carosel-item" src="http://placehold.it/500/f477f4/fff&amp;text=6" />
+  </div>
+  <a class="carosel-control carosel-control-right glyphicon glyphicon-chevron-right" href="#"></a>
+</div>
+
+
+
+                </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <footer class="container-fluid text-center">
+            <a href="" class="icons">
+                <i class="fa fa-facebook fa-2x"></i>
+                Facebook
+            </a>
+            <a href="" class="icons">
+                <i class="fa fa-soundcloud fa-2x"></i>
+                SoundCloud
+            </a>
+            <a href="" class="icons">
+                <i class="fa fa-youtube fa-2x"></i>
+                YouTube
+            </a>
+            <hr>
+            <p>&copy; All Rights Resvered.&emsp;Images: <a href='#'>Nicholas Gattuso</a>.</p>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="assets/js/header.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".carosel-inner").children(":first").addClass("prev");
+                $(".carosel-inner").children(":first").next().addClass("active");
+                $(".carosel-inner").children(":first").next().next().addClass("next");
+            });
+
+
+            $('.carosel-control-right').click(function() {
+                $(this).blur();
+                $(this).parent().find('.carosel-item').first().removeClass("prev");
+                $(this).parent().find('.carosel-item').first().next().removeClass("active");
+                $(this).parent().find('.carosel-item').first().next().next().removeClass("next");
+                $(this).parent().find('.carosel-item').first().insertAfter($(this).parent().find('.carosel-item').last());
+                $(this).parent().find('.carosel-item').first().addClass("prev");
+                $(this).parent().find('.carosel-item').first().next().addClass("active");
+                $(this).parent().find('.carosel-item').first().next().next().addClass("next");
+            });
+            $('.carosel-control-left').click(function() {
+                $(this).blur();
+                $(this).parent().find('.carosel-item').first().removeClass("prev");
+                $(this).parent().find('.carosel-item').first().next().removeClass("active");
+                $(this).parent().find('.carosel-item').first().next().next().removeClass("next");
+                $(this).parent().find('.carosel-item').last().insertBefore($(this).parent().find('.carosel-item').first());
+                $(this).parent().find('.carosel-item').first().addClass("prev");
+                $(this).parent().find('.carosel-item').first().next().addClass("active");
+                $(this).parent().find('.carosel-item').first().next().next().addClass("next");
+            });
+
+        </script>
+    </body>
+</html>
