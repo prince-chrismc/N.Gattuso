@@ -218,6 +218,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="assets/js/header.js"></script>
         <script>
+            var oldWidth;
             $(document).ready(function() {
                 if($(document).width() <= 768) {
                     $(".carosel-inner").children(":first").addClass("active");
@@ -229,27 +230,30 @@
                     $(".carousel-indicators").children(":first").next().addClass("active");
                     $(".carosel-inner").children(":first").next().next().addClass("next");
                 }
+
+                oldWidth = $(window).width();
             });
 
             $(window).resize(function() {
-                if($(document).width() <= 768) {
+                console.log(oldWidth);
+                console.log($(document).width());
+
+                if($(document).width() <= 768 && oldWidth > 768) {
                     $(".carosel-inner").children(":first").removeClass("prev");
-                    $(".carosel-inner").children(":first").addClass("active");
-                    $(".carosel-inner").children(":first").next().removeClass("active");
                     $(".carosel-inner").children(":first").next().next().removeClass("next");
+                    $(".carosel-inner").children(":first").insertAfter($(".carosel-inner").children(":last"));
                 }
-                else{
-                    $(".carosel-inner").children(":first").removeClass("active");
+                if($(document).width() > 768 && oldWidth <= 768){
+                    $(".carosel-inner").children(":last").insertBefore($(".carosel-inner").children(":first"));
                     $(".carosel-inner").children(":first").addClass("prev");
-                    $(".carosel-inner").children(":first").next().addClass("active");
                     $(".carosel-inner").children(":first").next().next().addClass("next");
                 }
+                oldWidth = $(window).width();
             });
 
 
             $('.carosel-control-right').click(function() {
                 $(this).blur();
-
                 if($(document).width() <= 768) {
                     $(this).parent().find('.carosel-item').first().removeClass("active");
                     $(this).parent().find('.carosel-item').first().insertAfter($(this).parent().find('.carosel-item').last());
