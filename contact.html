@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>DJ N.Gattuso</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Christopher McArthur"/>
+        <meta name="description" content="DJ N.Gattuso"/>
+
+        <!-- Web Icon -->
+        <link rel="shortcut icon" href="images/music-note.png"/>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/common.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/bd21c09c7b.js"></script>
+
+        <!-- Scripts -->
+        <script>
+            function openNav() {
+            document.getElementById("nav").style.right = "0px";
+            }
+            function closeNav() {
+            document.getElementById("nav").style.right = "-350px";
+            }
+        </script>
+
+        <style>
+            .contact-form input[type="text"],
+            .contact-form input[type="password"],
+            .contact-form input[type="email"],
+            .contact-form select,
+            .contact-form textarea {
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                -ms-appearance: none;
+                appearance: none;
+                border-radius: 4px;
+                border-style: solid;
+                border-width: 1px;
+                display: block;
+                outline: 0;
+                padding: 0 1em;
+                text-decoration: none;
+                width: 100%;
+                margin: 1em 0;
+            }
+            .contact-form input[type="text"],
+            .contact-form input[type="password"],
+            .contact-form input[type="email"],
+            .contact-form select {
+                height: 3.5em;
+            }
+
+            .contact-form textarea {
+                padding: 0.75em 1em;
+            }
+
+            .contact-form input[type="checkbox"],
+            .contact-form input[type="radio"] {
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                -ms-appearance: none;
+                appearance: none;
+                display: block;
+                float: left;
+                margin-right: -2em;
+                opacity: 0;
+                width: 1em;
+                z-index: -1;
+            }
+
+            .contact-form input[type="checkbox"] + label,
+            .contact-form input[type="radio"] + label {
+                text-decoration: none;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 1em;
+                font-weight: 400;
+                padding-left: 2.85em;
+                padding-right: 0.75em;
+                position: relative;
+                margin: 1em 0;
+            }
+
+			input[type="checkbox"] + label:before,
+			input[type="radio"] + label:before {
+				border-radius: 4px;
+				border-style: solid;
+				border-width: 1px;
+				content: '';
+				display: inline-block;
+				height: 2.1em;
+				left: 0;
+				line-height: 2.0125em;
+				position: absolute;
+				text-align: center;
+				top: 0;
+				width: 2.1em;
+			}
+
+            .contact-form input[type="checkbox"] + label:before,
+			.contact-form input[type="radio"] + label:before {
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				font-family: FontAwesome;
+				font-style: normal;
+				font-weight: normal;
+				text-transform: none !important;
+			}
+
+            .contact-form input[type="checkbox"]:checked + label:before,
+            .contact-form input[type="radio"]:checked + label:before {
+                content: '\f00c';
+            }
+
+            .contact-form input[type="checkbox"] + label:before {
+                border-radius: 4px;
+            }
+
+            .contact-form input[type="radio"] + label:before {
+                border-radius: 100%;
+            }
+
+
+            /* good */
+            .contact-form {
+                color: rgba(255, 255, 255, 0.75);
+            }
+
+            .contact-form input, .contact-form select, .contact-form textarea, .contact-form strong, .contact-form b, .contact-form h1, .contact-form h2, .contact-form h3, .contact-form h4, .contact-form h5, .contact-form h6, .contact-form header p, .contact-form label, .contact-form a {
+                color: white;
+            }
+
+            .contact-form a:hover {
+                color: #0059b3;
+            }
+
+            /* text inputs */
+            .contact-form input[type="text"],
+            .contact-form input[type="password"],
+            .contact-form input[type="email"],
+            .contact-form select,
+            .contact-form textarea {
+                background-color: rgba(255, 255, 255, 0.05);
+                border-color: transparent;
+                border: none;
+                color: inherit;
+            }
+
+            .contact-form input[type="text"]:focus,
+            .contact-form input[type="password"]:focus,
+            .contact-form input[type="email"]:focus,
+            .contact-form select:focus,
+            .contact-form textarea:focus {
+                border-color: #0059b3;
+                box-shadow: 0 0 0 1px #0059b3;
+            }
+
+            /* check and radio */
+            .contact-form input[type="checkbox"] + label,
+            .contact-form input[type="radio"] + label {
+                color: rgba(255, 255, 255, 0.75);
+            }
+
+            .contact-form input[type="checkbox"] + label:before,
+            .contact-form input[type="radio"] + label:before {
+                background-color: rgba(255, 255, 255, 0.05);
+                border-color: transparent;
+                border: none;
+            }
+
+            .contact-form input[type="checkbox"]:checked + label:before,
+            .contact-form input[type="radio"]:checked + label:before {
+                background-color: rgba(255, 255, 255, 0.05);
+                border-color: #0059b3;
+                color: #fff;
+            }
+
+            .contact-form input[type="checkbox"]:focus + label:before,
+            .contact-form input[type="radio"]:focus + label:before {
+                border-color: #0059b3;
+                box-shadow: 0 0 0 1px #0059b3;
+            }
+
+            /* placeholders */
+            .contact-form ::-webkit-input-placeholder {
+                color: #a5a9ad !important;
+            }
+
+            .contact-form :-moz-placeholder {
+                color: #a5a9ad !important;
+            }
+
+            .contact-form ::-moz-placeholder {
+                color: #a5a9ad !important;
+            }
+
+            .contact-form :-ms-input-placeholder {
+                color: #a5a9ad !important;
+            }
+
+            .contact-form .formerize-placeholder {
+                color: #a5a9ad !important;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="col-sm-4">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">DJ N.Gattuso</a>
+                    </div>
+                </div>
+                <div id="menu" class="menu" href="javascript:void(0)" onclick="openNav()"></div>
+            </div>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <div class="links list-group">
+                <a class="close" href="javascript:void(0)" onclick="closeNav()"><i class="fa fa-times"></i></a>
+                <hr>
+                <a class="list-group-item" href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i>  Home</a>
+                <a class="list-group-item" href="info.html"><i class="fa fa-info fa-fw" aria-hidden="true"></i>  Information</a>
+                <a class="list-group-item" href="gallery.html"><i class="fa fa-photo fa-fw" aria-hidden="true"></i>  Gallery</a>
+                <a class="list-group-item" href="samples.html"><i class="fa fa-music fa-fw" aria-hidden="true"></i>  Samples</a>
+                <a class="list-group-item" href="contact.html"><i class="fa fa-paper-plane-o fa-fw" aria-hidden="true"></i>  Contact</a>
+                <a class="list-group-item" href="https://www.facebook.com/music.n.gattuso/"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i>  Facebook</a>
+                <a class="list-group-item" href="https://soundcloud.com/n-gattuso"><i class="fa fa-soundcloud fa-fw" aria-hidden="true"></i>  Soundcloud</a>
+                <a class="list-group-item" href="https://www.youtube.com/channel/UCQ1o7o450Uov8JDxtecCR5A"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i> YouTube</a>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <div class="container-fluid">
+
+                <form id="myform" class="contact-form">
+					<div class="container-fluid">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input name="name" placeholder="Name" type="text" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <input name="email" placeholder="Email" type="email" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="select-wrapper">
+                                        <select name="category" id="category">
+                                            <option style="color: black;" value="null">- Category -</option>
+                                            <option style="color: black;" value="photo">Photography</option>
+                                            <option style="color: black;" value="web">Web Design</option>
+                                            <option style="color: black;" value="app">Applications</option>
+                                            <option style="color: black;" value="robot">Robotics</option>
+                                            <option style="color: black;" value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" style="text-align: center;">
+                                    <input type="checkbox" id="copy" name="copy">
+                                    <label for="copy">Email me a copy of this message</label>
+                                </div>
+                                <div class="col-sm-6" style="text-align: center;">
+                                    <input type="checkbox" id="human" name="human" checked>
+                                    <label for="human">I am a human and not a robot</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <textarea name="message" placeholder="Message" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" style="text-align: right;">
+                                    <input type="submit" class="main-btn">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="reset" class="main-btn"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</form>
+
+            </div>
+        </div>
+
+        <footer class="container-fluid text-center">
+            <a href="" class="icons">
+                <i class="fa fa-facebook fa-2x"></i>
+                Facebook
+            </a>
+            <a href="" class="icons">
+                <i class="fa fa-soundcloud fa-2x"></i>
+                SoundCloud
+            </a>
+            <a href="" class="icons">
+                <i class="fa fa-youtube fa-2x"></i>
+                YouTube
+            </a>
+            <hr>
+            <p>&copy; All Rights Resvered.&emsp;Images: <a href='#'>Nicholas Gattuso</a>.</p>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="assets/js/header.js"></script>
+
+        </body>
+</html>
