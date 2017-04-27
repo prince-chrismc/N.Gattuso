@@ -27,7 +27,7 @@ body
     width: 100%;
     min-width: 375px;
     height: 100%;
-    min-height: 500px;
+    min-height: 375px;
     margin: 0;
     padding: 0;
     border: 0;
@@ -67,7 +67,8 @@ header{
 .navbar-default .navbar-brand:hover
 {
     font-size: 2em;
-    color: white;
+    color: #0059b3;
+    text-shadow: 0 0 20px #656565;
 }
 
 .alt{
