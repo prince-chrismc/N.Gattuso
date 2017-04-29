@@ -193,6 +193,11 @@
                 text-align: center;
             }
 
+            .success{ /* when no error */
+                display: block;
+                text-align: center;
+            }
+
         </style>
     </head>
     <body>
@@ -366,7 +371,7 @@
                             success:function() {
                                 console.log('success');
                                 $('#form').slideUp("fast", function() {
-                                    $(this).before('<div class="error"><b>Success!</b> Thank you. Your email was sent successfully.</div>');
+                                    $(this).before('<form class="container-fluid" action="https://ngattuso.com/contact.html"><div class="success"><p><b>Success!</b> Thank you. Your email was sent successfully.</p></div><input type="submit" value="Again?" class="main-btn"></form>');
                                 });
                             }
                         });
