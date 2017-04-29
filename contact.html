@@ -19,6 +19,7 @@
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
         <!-- Font Awesome -->
         <script src="https://use.fontawesome.com/bd21c09c7b.js"></script>
@@ -304,7 +305,9 @@
                 $("#category").css("color", "#a5a9ad");
 
                 // form submission
-                $('form#form').submit(function() {
+                $('form#form').submit(function(e) {
+                    e.preventDefault();
+
                     //remove errors
                     $('form#form .error').remove();
                     var hasError = false;
@@ -345,7 +348,7 @@
                         var message = $('#message').val();
 
                         var cc = '';
-                        if( $("input[name=copy]:checked").length > 0){
+                        if($("input[name=copy]:checked").length > 0){
                             cc = email;
                         }
 
@@ -362,7 +365,7 @@
                             dataType:"json",
                             success:function() {
                                 console.log('success');
-                                $('form#contact-form').slideUp("fast", function() {
+                                $('#form').slideUp("fast", function() {
                                     $(this).before('<div class="error"><b>Success!</b> Thank you. Your email was sent successfully.</div>');
                                 });
                             }
@@ -370,13 +373,31 @@
                     }
                     return false;
                 });
+
+
+
+                $("input[type=reset]").click(function(){
+                    $("form#form").toggle("slide", { direction: "left" }, 250);
+
+                    $("form#form")[0].reset();
+                    $("#category").css("color", "#a5a9ad");
+                    $('.error').remove();
+
+                    $("form#form").toggle("slide", { direction: "right" }, 500);
+                });
+
+
             });
 
 
-            $("#category").change(function () {
-                if($(this).val() == "0") $(this).css("color", "#a5a9ad");
-                else $(this).css("color", "white");
+            $("#category").change(function() {
+                if($(this).val() == "0")
+                    $(this).css("color", "#a5a9ad");
+                else
+                    $(this).css("color", "white");
             });
+
+
         </script>
 
         </body>
