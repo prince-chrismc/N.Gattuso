@@ -232,7 +232,7 @@
         <div class="main-content">
                 <form id="form" class="contact-form">
 					<div class="container-fluid">
-                        <div class="col-sm-8 col-sm-offset-2">
+                        <div class="col-sm-8 col-sm-offset-2       col-md-6 col-md-offset-3">
                             <div class="row text-center" style="margin: 1em 0 2em 0;">
                                 <h1>Get In Touch!</h1>
                                 <h4>Contact me regarding any inqueries you may have. I may just be the right DJ for your up coming event!</h4>
@@ -311,6 +311,18 @@
 
         <script type="text/javascript">
             $(document).ready(function(){
+
+                //forcing fullscreen view
+                $('body').css("height", "auto");
+                var dif = $(document).height() - $('body').height();
+                if(dif > 0){
+                    console.log(dif);
+                    var padding = $('.main-content').innerHeight() - $('.main-content').height();
+                    $('.main-content').css("padding", (dif+padding)/2+'px 0');
+                }
+                $('body').css("height", "100%");
+
+                //set proper color initialy
                 $("#category").css("color", "#a5a9ad");
 
                 // form submission
@@ -412,7 +424,6 @@
                 else
                     $(this).css("color", "white");
             });
-
 
         </script>
 
