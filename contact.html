@@ -374,8 +374,8 @@
                             dataType:"json",
                             success:function() {
                                 console.log('success');
-                                $('#form').slideUp("fast", function() {
-                                    $(this).before('<form class="container-fluid" action="https://ngattuso.com/contact.html"><div class="success"><h3><b>Success!</b> Thank you. Your email was sent successfully.</h3><input type="submit" value="Again?" class="main-btn" style="margin: 1em 0;"></div></form>');
+                                $('form#form').slideUp("fast", function() {
+                                    $(this).before('<form id="post-sub" class="container-fluid"><div class="success"><h3><b>Success!</b> Thank you. Your email was sent successfully.</h3><input type="submit" value="Again?" class="main-btn" style="margin: 1em 0;"></div></form>');
                                 });
                             }
                         });
@@ -395,6 +395,13 @@
                     $("form#form").toggle("slide", { direction: "right" }, 500);
                 });
 
+                $('form#post-sub').submit(function(e) {
+                    e.preventDefault();
+                    $("form#form")[0].reset();
+                    $("#category").css("color", "#a5a9ad");
+                    $('form#post-sub').slideUp("fast");
+                    $('form#form').slideUp("slow");
+                });
 
             });
 
