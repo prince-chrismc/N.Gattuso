@@ -62,6 +62,15 @@
                 font-size: 1.25em;
             }
 
+            @media screen and (max-width: 500px){
+                .contact-form input[type="text"],
+                .contact-form input[type="email"],
+                .contact-form select,
+                .contact-form textarea {
+                    font-size: 1em;
+                }
+            }
+
             .contact-form input[type="text"],
             .contact-form input[type="email"],
             .contact-form select {
@@ -112,6 +121,13 @@
                 margin: 1em 0;
                 color: #a5a9ad;
 				line-height: 1.75em;
+            }
+
+            @media screen and (max-width: 500px){
+                .contact-form input[type="checkbox"] + label,
+                .contact-form input[type="radio"] + label {
+                    font-size: 1em;
+                }
             }
 
             .contact-form input[type="checkbox"] + label:before, /* this is the square for the check box */
@@ -198,6 +214,25 @@
                 text-align: center;
             }
 
+            .buttons-box{
+                margin: 1.5em 0;
+            }
+
+            .submit-box{
+                text-align: right;
+            }
+
+            @media screen and (max-width: 768px){
+                .buttons-box{
+                    text-align: center;
+
+                }
+                .submit-box,
+                .reset-box{
+                    display: inline-block;
+                }
+            }
+
         </style>
     </head>
     <body>
@@ -239,10 +274,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <input name="name" id="name" placeholder="Name" type="text" />
+                                    <div class="row" style="margin: 0">
+                                        <input name="name" id="name" placeholder="Name" type="text" />
+                                    </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input name="email" id="email" placeholder="Email" type="email" />
+                                    <div class="row" style="margin: 0">
+                                        <input name="email" id="email" placeholder="Email" type="email" />
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -274,11 +313,11 @@
                                     <textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
                                 </div>
                             </div>
-                            <div class="row" style="margin: 1.5em 0">
-                                <div class="col-sm-6" style="text-align: right;">
+                            <div class="row buttons-box">
+                                <div class="col-sm-6 submit-box">
                                     <input type="submit" class="main-btn">
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 reset-box">
                                     <input type="reset" class="main-btn"/>
                                 </div>
                             </div>
@@ -394,8 +433,6 @@
                     }
                     return false;
                 });
-
-
 
                 $("input[type=reset]").click(function(){
                     $("form#form").toggle("slide", { direction: "left" }, 250);
