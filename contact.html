@@ -34,6 +34,12 @@
         </script>
 
         <style>
+            /* good */
+            .contact-form{
+                color: white;
+            }
+
+            /* text inputs */
             .contact-form input[type="text"],
             .contact-form input[type="password"],
             .contact-form input[type="email"],
@@ -43,16 +49,19 @@
                 -webkit-appearance: none;
                 -ms-appearance: none;
                 appearance: none;
-                border-radius: 4px;
-                border-style: solid;
-                border-width: 1px;
                 display: block;
                 outline: 0;
                 padding: 0 1em;
                 text-decoration: none;
                 width: 100%;
-                margin: 1em 0;
+                margin: 0.5em 0;
+                background-color: rgba(255, 255, 255, 0.05);
+                border: 2px solid transparent;
+                border-radius: 4px;
+                color: inherit;
+                font-size: 1.25em;
             }
+
             .contact-form input[type="text"],
             .contact-form input[type="password"],
             .contact-form input[type="email"],
@@ -65,7 +74,20 @@
                 resize: vertical;
             }
 
-            .contact-form input[type="checkbox"],
+            .contact-form input[type="text"]:focus,
+            .contact-form input[type="password"]:focus,
+            .contact-form input[type="email"]:focus,
+            .contact-form select:focus,
+            .contact-form textarea:focus {
+                border-color: #0059b3;
+                -webkit-box-shadow: 0px 0px 15px 0px #0059b3;
+                -moz-box-shadow: 0px 0px 15px 0px #0059b3;
+                -ms-box-shadow: 0px 0px 15px 0px #0059b3;
+                box-shadow: 0px 0px 15px 0px #0059b3;
+            }
+
+            /* check and radio */
+            .contact-form input[type="checkbox"], /* this hides the default item */
             .contact-form input[type="radio"] {
                 -moz-appearance: none;
                 -webkit-appearance: none;
@@ -79,117 +101,76 @@
                 z-index: -1;
             }
 
-            .contact-form input[type="checkbox"] + label,
+            .contact-form input[type="checkbox"] + label, /* this sets the text possitioning*/
             .contact-form input[type="radio"] + label {
                 text-decoration: none;
                 cursor: pointer;
                 display: inline-block;
-                font-size: 1em;
+                font-size: 1.25em;
                 font-weight: 400;
                 padding-left: 2.85em;
                 padding-right: 0.75em;
                 position: relative;
                 margin: 1em 0;
+                color: #a5a9ad;
+				line-height: 1.75em;
             }
 
-			input[type="checkbox"] + label:before,
-			input[type="radio"] + label:before {
-				border-radius: 4px;
-				border-style: solid;
-				border-width: 1px;
-				content: '';
+            .contact-form input[type="checkbox"] + label:before, /* this is the square for the check box */
+            .contact-form input[type="radio"] + label:before {
 				display: inline-block;
-				height: 2.1em;
+				height: 1.75em;
+				width: 1.75em;
+				top: 0;
 				left: 0;
-				line-height: 2.0125em;
+				line-height: 1.75em;
 				position: absolute;
 				text-align: center;
-				top: 0;
-				width: 2.1em;
-			}
-
-            .contact-form input[type="checkbox"] + label:before,
-			.contact-form input[type="radio"] + label:before {
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
-				font-style: normal;
-				font-weight: normal;
+				content: '';
+                font-size: 1em;
 				text-transform: none !important;
-			}
-
-            .contact-form input[type="checkbox"]:checked + label:before,
-            .contact-form input[type="radio"]:checked + label:before {
-                content: '\f00c';
+                background-color: rgba(255, 255, 255, 0.05);
+                border: 2px solid transparent;
             }
 
-            .contact-form input[type="checkbox"] + label:before {
-                border-radius: 4px;
-            }
-
-            .contact-form input[type="radio"] + label:before {
-                border-radius: 100%;
-            }
-
-
-            /* good */
-            .contact-form {
-                color: rgba(255, 255, 255, 0.75);
-            }
-
-            .contact-form input, .contact-form select, .contact-form textarea, .contact-form strong, .contact-form b, .contact-form h1, .contact-form h2, .contact-form h3, .contact-form h4, .contact-form h5, .contact-form h6, .contact-form header p, .contact-form label, .contact-form a {
+            .contact-form input[type="checkbox"]:not(:checked) + label:after, /* checked mark aspect changes */
+            .contact-form input[type="checkbox"]:checked + label:after {
+                content: '✔';
+                position: absolute;
                 color: white;
+                top: -0.1em;
+                left: .2em;
+                font-size: 2em;
+                line-height: 0.75;
+                transition: all .2s;
             }
 
-            .contact-form a:hover {
-                color: #0059b3;
+            .contact-form input[type="checkbox"]:not(:checked) + label:after { /* checked mark aspect changes */
+                opacity: 0;
+                transform: scale(0);
+            }
+            .contact-form input[type="checkbox"]:checked + label:after { /* checked mark aspect changes */
+                opacity: 1;
+                transform: scale(1);
             }
 
-            /* text inputs */
-            .contact-form input[type="text"],
-            .contact-form input[type="password"],
-            .contact-form input[type="email"],
-            .contact-form select,
-            .contact-form textarea {
-                background-color: rgba(255, 255, 255, 0.05);
-                border-color: transparent;
-                border: none;
-                color: inherit;
-            }
-
-            .contact-form input[type="text"]:focus,
-            .contact-form input[type="password"]:focus,
-            .contact-form input[type="email"]:focus,
-            .contact-form select:focus,
-            .contact-form textarea:focus {
-                border-color: #0059b3;
-                box-shadow: 0 0 0 1px #0059b3;
-            }
-
-            /* check and radio */
-            .contact-form input[type="checkbox"] + label,
-            .contact-form input[type="radio"] + label {
-                color: rgba(255, 255, 255, 0.75);
-            }
-
-            .contact-form input[type="checkbox"] + label:before,
-            .contact-form input[type="radio"] + label:before {
-                background-color: rgba(255, 255, 255, 0.05);
-                border-color: transparent;
-                border: none;
-            }
-
-            .contact-form input[type="checkbox"]:checked + label:before,
-            .contact-form input[type="radio"]:checked + label:before {
-                background-color: rgba(255, 255, 255, 0.05);
-                border-color: #0059b3;
-                color: #fff;
-            }
-
+            .contact-form input[type="checkbox"]:checked + label:before, /* this is the square for the check box */
+            .contact-form input[type="radio"]:checked + label:before,
             .contact-form input[type="checkbox"]:focus + label:before,
             .contact-form input[type="radio"]:focus + label:before {
                 border-color: #0059b3;
-                box-shadow: 0 0 0 1px #0059b3;
+                -webkit-box-shadow: 0px 0px 15px 0px #0059b3;
+                -moz-box-shadow: 0px 0px 15px 0px #0059b3;
+                -ms-box-shadow: 0px 0px 15px 0px #0059b3;
+                box-shadow: 0px 0px 15px 0px #0059b3;
+            }
+
+            .contact-form input[type="checkbox"] + label:before { /* individual barder radius */
+                border-radius: 4px;
+            }
+
+            .contact-form input[type="radio"] + label:before { /* individual barder radius */
+                border-radius: 100%;
             }
 
             /* placeholders */
@@ -208,12 +189,6 @@
             .contact-form :-ms-input-placeholder {
                 color: #a5a9ad !important;
             }
-
-            .contact-form .formerize-placeholder {
-                color: #a5a9ad !important;
-            }
-
-
 
         </style>
     </head>
@@ -247,9 +222,7 @@
         </nav>
 
         <div class="main-content">
-            <div class="container-fluid">
-
-                <form id="myform" class="contact-form">
+                <form id="form" class="contact-form">
 					<div class="container-fluid">
                         <div class="col-sm-8 col-sm-offset-2">
                             <div class="row">
@@ -264,7 +237,7 @@
                                 <div class="col-sm-12">
                                     <div class="select-wrapper">
                                         <select name="category" id="category">
-                                            <option style="color: black;" value="null">- Category -</option>
+                                            <option style="color: black;" value="0" disabled selected hidden>- Category -</option>
                                             <option style="color: black;" value="photo">Photography</option>
                                             <option style="color: black;" value="web">Web Design</option>
                                             <option style="color: black;" value="app">Applications</option>
@@ -289,7 +262,7 @@
                                     <textarea name="message" placeholder="Message" rows="4"></textarea>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" style="margin-top: 1.5em">
                                 <div class="col-sm-6" style="text-align: right;">
                                     <input type="submit" class="main-btn">
                                 </div>
@@ -300,8 +273,6 @@
                         </div>
                     </div>
 				</form>
-
-            </div>
         </div>
 
         <footer class="container-fluid text-center">
@@ -324,6 +295,19 @@
         <!-- Scripts -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="assets/js/header.js"></script>
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#category").css("color", "#a5a9ad");
+            });
+
+
+            $("#category").change(function () {
+                if($(this).val() == "0") $(this).css("color", "#a5a9ad");
+                else $(this).css("color", "white");
+            });
+        </script>
 
         </body>
 </html>
