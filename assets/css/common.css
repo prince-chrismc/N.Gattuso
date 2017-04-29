@@ -273,4 +273,5 @@ footer a {
 footer a:hover {
     color: #0059b3;
     text-decoration: none;
+    text-shadow: 0 0 20px #656565;
 }
