@@ -243,7 +243,7 @@
                     $(".carosel-inner").children(":first").next().next().removeClass("next");
                     $(".carosel-inner").children(":first").insertAfter($(".carosel-inner").children(":last"));
                 }
-                else if($(document).width() > 768 && oldWidth <= 768){
+                if($(document).width() > 768 && oldWidth <= 768){
                     $(".carosel-inner").children(":last").insertBefore($(".carosel-inner").children(":first"));
                     $(".carosel-inner").children(":first").addClass("prev");
                     $(".carosel-inner").children(":first").next().next().addClass("next");
