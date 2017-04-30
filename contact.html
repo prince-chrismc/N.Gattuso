@@ -408,21 +408,26 @@
                         var email = $('#email').val();
                         //get the comments
                         var message = $('#message').val();
-
+                        //get copy selected
                         var cc = '';
-                        if($("input[name=copy]:checked").length > 0){
+                        if($("input[name=copy]:checked").length > 0)
                             cc = email;
-                        }
+                        //get human
+                        var human = 'robot';
+                        if($("input[name=human]:checked").length > 0)
+                            human = 'human';
+
 
                         $.ajax({
                             url:'https://formspree.io/prince.chrismc@gmail.com',
                             method:'POST',
                             data:{
+                                _subject:'New Message From ngattuso.com!',
+                                _cc:cc,
                                 name:name,
                                 email:email,
                                 message:message,
-                                _subject:'New Message From ngattuso.com!',
-                                _cc:cc,
+                                human:human,
                             },
                             dataType:"json",
                             success:function() {
