@@ -353,12 +353,10 @@
 
                 //forcing fullscreen view
                 $('body').css("height", "auto");
-                var dif = $(document).height() - $('body').height();
-                if(dif > 0){
-                    console.log(dif);
-                    var padding = $('.main-content').innerHeight() - $('.main-content').height();
-                    $('.main-content').css("padding", (dif+padding)/2+'px 0');
-                }
+                var dif = $(window).height() - $('body').height();
+                //console.log(dif);
+                var padding = $('.main-content').innerHeight() - $('.main-content').height();
+                $('.main-content').css("padding", (dif+padding)/2+'px 0');
                 $('body').css("height", "");
 
                 //set proper color initialy
@@ -452,6 +450,16 @@
                     $('form#form').slideUp("slow");
                 });
 
+            });
+
+
+            $(window).resize(function(){
+                $('body').css("height", "auto");
+                var dif = $(window).height() - $('body').height();
+                //console.log("win: " + $(window).height() +   '   doc: ' + $(document).height() + " - body: " + $('body').height() + " = " + dif);
+                var padding = $('.main-content').innerHeight() - $('.main-content').height();
+                $('.main-content').css("padding", (dif+padding)/2+'px 0');
+                $('body').css("height", "");
             });
 
 
