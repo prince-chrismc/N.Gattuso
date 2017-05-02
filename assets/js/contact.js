@@ -50,6 +50,9 @@ $(document).ready(function(){
 
         //lets try to submit this everything is correct
         if(!hasError) {
+            $('form#form').prepend('<div class="sending"><h3>We are working to send your message</h3><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></div>');
+            $('form#form').slideUp("fast");
+
             //get the name field value
             var name = $('#name').val();
             //get the name field value
@@ -65,7 +68,6 @@ $(document).ready(function(){
             if($("input[name=human]:checked").length > 0)
                 human = 'human';
 
-
             $.ajax({
                 url:'https://formspree.io/dj_nick_gattuso@hotmail.com',
                 method:'POST',
@@ -80,9 +82,12 @@ $(document).ready(function(){
                 dataType:"json",
                 success:function() {
                     console.log('success');
-                    $('form#form').slideUp("fast", function() {
-                        $(this).before('<form id="post-sub" class="container-fluid"><div class="success"><h3><b>Success!</b> Thank you. Your email was sent successfully.</h3><input type="submit" value="Again?" class="main-btn" style="margin: 1em 0;"></div></form>');
-                    });
+                    $('.sending').remove();
+                    $('form#form').before('<form id="post-sub" class="container-fluid"><div class="success"><h3><b>Success!</b> Thank you. Your email was sent successfully.</h3><button type="submit" class="main-btn" style="margin: 1em 0;">Again?</button></div></form>');
+                },
+                error:function(){
+                    $('.sending').remove();
+                    $('form#form').before('<div class="container-fluid"><div class="success"><h3><b>Oh no!</b> Something went horribly wrong. <a href="mailto:dj_nick_gattuso@hotmail.com">Contact me directly</a> or try again later.</h3></form>');
                 }
             });
         }
