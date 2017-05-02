@@ -1,0 +1,117 @@
+.carosel {
+    width: 100%;
+    position: relative;
+}
+
+.carosel-inner {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.carosel-item { /* multi pane view for larger screens */
+    opacity: 0;
+    width: 33.333%;
+    display: inline-block;
+}
+
+
+@media screen and (max-width: 768px){
+    .carosel-item { /* single image on small screens */
+        width: 100%;
+    }
+}
+
+.next, /* for multi pane */
+.prev{
+    opacity: 0.5;
+    -moz-transform: scale(0.75,0.75); /* FF */
+    -ms-transform: scale(0.75,0.75); /* IE 9 */
+    -webkit-transform: scale(0.75,0.75); /* Safari */
+    transform: scale(0.75,0.75); /* Standard syntax */
+    z-index: 3;
+}
+
+.active{
+    opacity: 1;
+    -moz-transform: scale(1.25,1.25); /* FF */
+    -ms-transform: scale(1.25,1.25); /* IE 9 */
+    -webkit-transform: scale(1.25,1.25); /* Safari */
+    transform: scale(1.25,1.25); /* Standard syntax */
+    z-index: 5;
+}
+
+@media screen and (max-width: 768px){
+    .active{
+        opacity: 1;
+        -moz-transform: scale(1,1); /* FF */
+        -ms-transform: scale(1,1); /* IE 9 */
+        -webkit-transform: scale(1,1); /* Safari */
+        transform: scale(1,1); /* Standard syntax */
+        z-index: 5;
+    }
+}
+
+/* controls */
+.carosel-control {
+    position: absolute;
+    top: 50%;
+    padding: 15px;
+    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 30px;
+    display: inline-block;
+    z-index: 10;
+}
+
+.carosel-control-left {
+    left: 15px;
+}
+
+.carosel-control-right {
+    right: 15px;
+}
+
+.carosel-control:active,
+.carosel-control:hover {
+  text-decoration: none;
+  color: white;
+}
+
+/* position indicators */
+.carousel-indicators {
+    display: block;
+    position: relative;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 35px;
+    margin-left: 0;
+    text-align: center;
+    list-style: none;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 2px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255,0.25);
+    border: none;
+    border-radius: 0;
+}
+
+.carousel-indicators .active {
+    width: 10px;
+    height: 2px;
+    margin: 1px;
+}
+
