@@ -89,7 +89,7 @@ $(document).ready(function(){
         return false;
     });
 
-    $("input[type=reset]").click(function(){
+    $("button[type=reset]").click(function(){
         $("form#form").toggle("slide", { direction: "left" }, 250);
 
         $("form#form")[0].reset();
