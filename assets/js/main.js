@@ -28,6 +28,7 @@ $('#container').imagesLoaded()
   })
   .done( function( instance ) {
     console.log('all images successfully loaded');
+    preLoader();
   })
   .fail( function() {
     console.log('all images loaded, at least one is broken');
@@ -36,3 +37,19 @@ $('#container').imagesLoaded()
     var result = image.isLoaded ? 'loaded' : 'broken';
     console.log('image is ' + result + ' for ' + image.img.src );
   });
+
+
+// preload
+$(document).ready(function() {
+    "use strict";
+    $('#preload').css({
+        display: 'table'
+    });
+});
+
+
+function preLoader() {
+    setTimeout(function() {
+        $('#preload').delay(1000).fadeOut(1000);
+    });
+};

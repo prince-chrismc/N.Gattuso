@@ -29,8 +29,50 @@
         
         <!-- ImageLoader -->
         <script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+
+        <style>
+/*
+* ==========================================================================
+    Preloader
+* ==========================================================================
+*/
+#preload {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    background: #000;
+    display: none;
+    z-index: 10000;
+}
+#preload-status {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background: #bbb url(images/spinning.gif) no-repeat center center;
+    opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+    filter: alpha(opacity=1);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+}
+
+        </style>
     </head>
     <body>
+        <div id="preload">
+            <div id="preload-status"></div>
+        </div>
+
         <!-- Header -->
         <header class="navbar navbar-default navbar-fixed-top alt">
             <div class="container-fluid">
