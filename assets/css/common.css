@@ -254,6 +254,7 @@ footer .icons:hover {
     background-color: #222;
     color: #0059b3;
     text-decoration: none;
+    text-shadow: none;
 }
 
 footer .icons i {
