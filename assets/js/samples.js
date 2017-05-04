@@ -33,7 +33,12 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 "\u00a9too":["encoder"],cprt:["copyright"],covr:["picture"],"\u00a9grp":["grouping"],keyw:["keyword"],"\u00a9lyr":["lyrics"],"\u00a9cmt":["comment"],tmpo:["tempo"],cpil:["compilation"],disk:["disc"]};c.m=function(b,a){b.f([0,7],function(){g(b,0,b.h(),a)})};c.n=function(c){var a={};b(a,c,0,c.h());return a};h.ID4=h.r})(this);
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/*                                                                                               */
+/*                    This is the work of mat.preziotte@gmail.com CC BY-NC 3.0                   */
+/*                              https://github.com/preziotte/party-mode                          */
+/*                                                                                               */
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
 
 (function () {
 
@@ -72,11 +77,7 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 			vizNum: 0,													// active visualization (index number)
 			thumbs_init: [0,0,0,0,0,0,0,0],								// are thumbnails initialized?
 			theme: 0, 													// default color palette
-			currentSong : 0,											// current track
-
-			soundCloudURL: null,
-			soundCloudData: null,
-			soundCloudTracks: null,
+			currentSong: 0,											    // current track
 
 			audioURL: null,
 
@@ -97,7 +98,6 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 				.attr("height", State.height);
 
 		a.bind();			// attach all the handlers
-		//a.keyboard();		// bind all the shortcuts
 
 		if (window.location.protocol.search('chrome-extension') >= 0) {
 			a.findAudio();
@@ -110,9 +110,6 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 			a.loadAudioFromURL(h.getURLParameter('audio'));
 		else
 			a.loadSound();
-
-		if (State.fastHide)
-			h.toggleMenu();
 		};
 
 
@@ -239,9 +236,6 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 
 	    now = Date.now();
 	    delta = now - State.then;
-
-	    if (audio)
-	        $('#progressBar').attr('style','width: '+(audio.currentTime/audio.duration)*100+"%");
 
 	    // some framerate limiting logic -- http://codetheory.in/controlling-the-frame-rate-with-requestanimationframe/
 	    if (delta > State.drawInterval) {
