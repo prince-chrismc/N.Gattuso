@@ -750,6 +750,10 @@ svg .spin {
   opacity: 1;
 }
 
+.menu-controls i {
+    margin: 0.5em;
+}
+
 
 /* /////////////////// */
 /* ANIMATIONS STUFF // */
