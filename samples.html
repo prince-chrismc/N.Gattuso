@@ -22,6 +22,10 @@
 
         <!-- Font Awesome -->
         <script src="https://use.fontawesome.com/bd21c09c7b.js"></script>
+
+        <!-- Audio Visualizer -->
+        <link rel="stylesheet" href="assets/css/samples.css"/>
+        <script src="assets/js/d3.js"></script>
     </head>
     <body>
         <!-- Header -->
@@ -53,11 +57,33 @@
         </nav>
 
         <div class="main-content">
-            <div class="container-fluid">
+            <div class="container">
 
-                https://github.com/preziotte/party-mode
+                main idea: https://github.com/preziotte/party-mode
+
+                backup: https://wavesurfer-js.org/
+
+                <div id="mp3_player" class="fade fadeOut">
+                <div id="audio_box"><audio preload="auto" src="" autoplay="" crossorigin="anonymous"></audio></div> <i id="fullscreen" class="icon-resize-full-alt"></i>
+            </div>
+
+
+            <div class="song-metadata" data-go="images/Kalimba.mp3"></div>
+
+
+                <div class="menu-controls">
+                <i class="i icon-backward2"></i>
+                <i class="fa fa-music fa-4x"></i>
+                <i class="fa fa-music"></i>
+                <i class="i icon-soundcloud schover" data-hovertext="Play music from a SoundCloud URL."></i>
+                <i class="i icon-microphone" data-hovertext="Connect to the microphone on your computer."></i>
+            </div>
 
             </div>
+
+
+
+
         </div>
 
         <footer class="container-fluid text-center">
@@ -81,5 +107,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="assets/js/header.js"></script>
         <script src="assets/js/nav.js"></script>
+        <script src="assets/js/samples.js"></script>
     </body>
 </html>
