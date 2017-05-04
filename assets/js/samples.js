@@ -27,13 +27,8 @@ function y(h,g,b){var c=g||0,d=0;"string"==typeof h?(d=b||h.length,this.a=functi
 			version: '1.6.0',
 			debug: (window.location.href.indexOf("debug") > -1) ? true : false,
 			playlist: ['Kalimba.mp3', 'Maid with the Flaxen Hair.mp3', 'Sleep Away.mp3'],
-			playListLinks: ['images/Kalimba.mp3', 'images/Maid with the Flaxen Hair.mp3', 'images/Sleep Away.mp3'],
 			width : $(".container").width(),
 			height : 500,
-			sliderVal: 50,												// depricated -- value of html5 slider
-			canKick: true,												// rate limits auto kick detector
-			metaLock: false,											// overrides .hideHUD() when song metadata needs to be shown
-			fastHide : (h.getURLParameter('fastHide')) ? 100 : null,
 			shuffle : false,
 
 			vendors : ['-webkit-', '-moz-', '-o-', ''],
@@ -45,9 +40,6 @@ function y(h,g,b){var c=g||0,d=0;"string"==typeof h?(d=b||h.length,this.a=functi
 
 			hud: 1,														// is hud visible?
 			active: null,												// active visualization (string)
-			vizNum: 0,													// active visualization (index number)
-			thumbs_init: [0,0,0,0,0,0,0,0],								// are thumbnails initialized?
-			theme: 0, 													// default color palette
 			currentSong: 0,											    // current track
 
 			audioURL: null,
