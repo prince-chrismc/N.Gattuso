@@ -255,9 +255,7 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 			  	r.equal();
 			  	break;
 			};
-
 		}
-
 		}
 	root.App = a;
 
@@ -287,7 +285,6 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 	c.normalize = function(coef, offset, neg) {
 
 		//https://stackoverflow.com/questions/13368046/how-to-normalize-a-list-of-positive-numbers-in-javascript
-
 		var coef = coef || 1;
 		var offset = offset || 0;
 		var numbers = waveform_array;
@@ -453,28 +450,18 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 			    	for (var i = 0; i < image.data.length; i++) {
 			    		base64String += String.fromCharCode(image.data[i]);
 			    	}
-			    	//console.log("data:" + image.format + ";base64," + window.btoa(base64String));
-			    	//$("art").src = "data:" + image.format + ";base64," + window.btoa(base64String);
-			    	//$("art").style.display = "block";
-			    }
-			    else {
-			    	//console.log("nope.");
-			    	//$("art").style.display = "none";
 			    }
 			}, {
 			    dataReader: FileAPIReader(file)
 			});
 		}
-
 		};
 
 	h.togglePlay = function() {
 		(audio && audio.paused == false) ? audio.pause() : audio.play();
-		$('.icon-pause').toggleClass('icon-play');
 		};
 	h.songEnded = function() {
 		console.log('h.songEnded fired');
-
 		h.changeSong('n');
 
 		};
@@ -504,7 +491,6 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 			}
 			else {
 				audio.currentTime = 0;
-				$('.icon-pause').removeClass('icon-play');
 				return;
 			}
 		}
@@ -526,8 +512,6 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 				h.readID3(audio.src);
 			}
 		}
-
-		$('.icon-pause').removeClass('icon-play');
 
 		};
 	h.renderSongTitle = function(obj) {
@@ -573,98 +557,10 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 			}, State.fastHide || 3000);
 
 		};
-	h.tooltipReplace = function() {
-		console.log('h.tooltipReplace fired');
-
-		var text = $(this).attr('data-hovertext');
-		console.log(text);
-		if (text != null) {
-			State.hoverTemp = $('.song-metadata').html();
-			$('.song-metadata').html(text);
-		}
-
-		};
-	h.tooltipUnReplace = function() {
-		console.log('h.tooltipUnReplace fired');
-
-		if (State.hoverTemp != null) {
-			$('.song-metadata').html(State.hoverTemp);
-			State.hoverTemp = null;
-		}
-
-		};
-	h.songGo = function() {
-		console.log('h.songGo fired.');
-
-		if (!$(this).attr('data-go'))
-			return false;
-		audio.pause();
-		$('.icon-pause').removeClass('icon-play');
-		window.open($(this).attr('data-go'),'_blank');
-
-		};
-
-	h.themeChange = function(n) {
-		n = +n;
-		n  = (n<0) ? 5 : n;
-		n  = (n>5) ? 0 : n;
-		State.theme = n;
-
-		console.log('h.themeChange:'+n);
-		var name = 'theme_'+n;
-		$('html').attr('class',name);
-
-		$('.dotstyle li.current').removeClass('current');
-		$('.dotstyle li:eq('+n+')').addClass('current');
-
-		};
-	h.vizChange = function(n) {
-		n  = (n<0) ? 6 : n;
-		n  = (n>6) ? 0 : n;
-
-		console.log('h.vizChange:'+n);
-		State.trigger = n;
-		$('.menu li.active').removeClass('active');
-		$('.menu li[viz-num="'+n+'"]').addClass('active');
-
-		};
-	h.infiniteChange = function(toggle) {
-		console.log('h.infiniteChange fired: '+toggle);
-
-		clearInterval(State.changeInterval);
-
-		State.changeInterval = setInterval(function(){
-	    	h.themeChange(Math.floor(Math.random() * 6));
-	    	h.vizChange(Math.floor(Math.random() * 8));
-		},toggle);
-
-		if (toggle == null)
-			clearInterval(State.changeInterval);
-
-		};
-
-	h.icosahedronFaces = function(slide) {
-		var slide = slide || 180;
-		var faces = [],
-		  y = Math.atan2(1, 2) * slide / Math.PI;
-		for (var x = 0; x < 360; x += 72) {
-		faces.push(
-		  [[x +  0, -90], [x +  0,  -y], [x + 72,  -y]],
-		  [[x + 36,   y], [x + 72,  -y], [x +  0,  -y]],
-		  [[x + 36,   y], [x +  0,  -y], [x - 36,   y]],
-		  [[x + 36,   y], [x - 36,   y], [x - 36,  90]]
-		);
-		}
-		return faces;
-		};
 	h.degreesToRads = function(n) {
     return d3.scale.linear().domain([0, 360]).range([0, 2 * Math.PI])(this);
   	};
 
-	h.microphoneError = function(e) {
-		// user clicked not to let microphone be used
-		console.log(e);
-		};
     h.getURLParameter = function(sParam) {
     	//http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
 	    var sPageURL = window.location.search.substring(1);
@@ -700,25 +596,6 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 
 		return 'unknown';
 
-		};
-	h.getCookie = function(c_name) {
-		//console.log("h.getCookie fired");
-		var i,x,y,ARRcookies=document.cookie.split(";");
-		for (i=0;i<ARRcookies.length;i++) {
-		  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-		  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-		  x=x.replace(/^\s+|\s+$/g,"");
-		  if (x==c_name) {
-		    return unescape(y);
-		  }
-		}
-		};
-	h.setCookie = function(c_name,value,exdays) {
-		//console.log("h.setCookie fired");
-		var exdate=new Date();
-		exdate.setDate(exdate.getDate() + exdays);
-		var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-		document.cookie=c_name + "=" + c_value;
 		};
 	h.prettyLog = function(data) {
 		console.log("h.prettyLog fired");
