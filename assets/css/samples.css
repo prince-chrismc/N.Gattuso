@@ -108,27 +108,9 @@ svg .bar rect, svg rect.equal  {
             transform: rotate(0deg);
 }
 
-svg rect.equal, html.theme_2 svg rect.equal {
+svg rect.equal{
   opacity: 0.85;
   stroke-width: 0;
-}
-
-html.theme_3 svg rect.equal, html.theme_4 svg rect.equal  {
-  opacity: 0.8;
-  stroke-width: 0;
-}
-
-html.theme_1 svg rect.equal {
-  fill: white;
-  stroke-width: 0;
-}
-
-
-path {
-  fill: #f88e22;
-  stroke: #fff;
-  stroke-width: 2px;
-  opacity: 0.4;
 }
 
 svg {
