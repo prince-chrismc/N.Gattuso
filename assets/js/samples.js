@@ -50,8 +50,8 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 		var s = {
 			version: '1.6.0',
 			debug: (window.location.href.indexOf("debug") > -1) ? true : false,
-			playlist: ['dawn.mp3', 'forgot.mp3'],
-			playListLinks: ['http://www.iamsirch.com/', 'https://soundcloud.com/mononome'],
+			playlist: ['Kalimba.mp3', 'Maid with the Flaxen Hair.mp3', 'Sleep Away.mp3'],
+			playListLinks: ['images/Kalimba.mp3', 'images/Maid with the Flaxen Hair.mp3', 'images/Sleep Away.mp3'],
 			width : $(".container").width(),
 			height : 500,
 			sliderVal: 50,												// depricated -- value of html5 slider
@@ -96,7 +96,7 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 				.attr("width", State.width)
 				.attr("height", State.height);
 
-		//a.bind();			// attach all the handlers
+		a.bind();			// attach all the handlers
 		//a.keyboard();		// bind all the shortcuts
 
 		if (window.location.protocol.search('chrome-extension') >= 0) {
@@ -119,18 +119,10 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 	a.bind = function() {
 		console.log("a.bind fired");
 		var click = (Helper.isMobile()) ? 'touchstart' : 'click';
-		$('.icon-pause').on(click, h.togglePlay);
-		$('.icon-play').on(click, h.togglePlay);
-		$('.icon-forward2').on(click, function() { h.changeSong('n'); });
-		$('.icon-backward2').on(click, function() { h.changeSong('p'); });
-
-		// hide HUD on idle mouse
-		$('body').on('touchstart mousemove',function() {
-			h.showHUD();
-			clearTimeout(hide);
-			hide = setTimeout(function() { h.hideHUD(); }, State.fastHide || 2000);
-		});
-		hide = setTimeout(function() { h.hideHUD(); }, State.fastHide || 2000);
+		$('.fa-pause').on(click, h.togglePlay);
+		$('.fa-play').on(click, h.togglePlay);
+		$('.fa-step-forward').on(click, function() { h.changeSong('n'); });
+		$('.fa-step-backward').on(click, function() { h.changeSong('p'); });
 
 		// update state on window resize
 		window.onresize = function(event) { h.resize(); };
@@ -161,7 +153,7 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 
 		audio = null;
 	    var request = new XMLHttpRequest();
-	    request.open("GET", "mp3/"+State.playlist[0], true);
+	    request.open("GET", "images/"+State.playlist[0], true);
 	    request.responseType = "arraybuffer";
 
 	    request.onload = function(event) {
@@ -536,7 +528,7 @@ m)d[k[0]]=a.a(e+16+11),d.count=a.a(e+16+13);else{var m=e+16+4+4,r=t-16-4-4,n;swi
 		}
 		else {
 			if (audio) {
-				audio.src = 'mp3/'+State.playlist[Math.abs(State.currentSong)%State.playlist.length];
+				audio.src = 'images/'+State.playlist[Math.abs(State.currentSong)%State.playlist.length];
 				h.readID3(audio.src);
 			}
 		}
