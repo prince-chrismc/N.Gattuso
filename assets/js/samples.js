@@ -27,7 +27,8 @@ function y(h,g,b){var c=g||0,d=0;"string"==typeof h?(d=b||h.length,this.a=functi
 			version: '1.6.0',
 			debug: (window.location.href.indexOf("debug") > -1) ? true : false,
 			playlist: ['Kalimba.mp3', 'Maid with the Flaxen Hair.mp3', 'Sleep Away.mp3'],
-			width : $(".container").width(),
+            playListLinks: ['images/Kalimba.mp3', 'images/Maid with the Flaxen Hair.mp3', 'images/Sleep Away.mp3'],
+			width : $(".col-sm-12").width(),
 			height : 500,
 			shuffle : false,
 
@@ -54,7 +55,7 @@ function y(h,g,b){var c=g||0,d=0;"string"==typeof h?(d=b||h.length,this.a=functi
 		root.context = new (window.AudioContext || window.webkitAudioContext)();
 
 		// append main svg element
-		root.svg = d3.select(".container").append("svg").attr('id', 'viz')
+		root.svg = d3.select("#audio-visual").append("svg").attr('id', 'viz')
 				.attr("width", State.width)
 				.attr("height", State.height);
 
