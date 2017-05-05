@@ -368,17 +368,7 @@ function y(h,g,b){var c=g||0,d=0;"string"==typeof h?(d=b||h.length,this.a=functi
 	h.changeSong = function(direction) {
 		console.log('h.changeSong fired');
 
-		var totalTracks = State.soundCloudTracks || State.playlist.length;
-		if (State.soundCloudData && State.soundCloudTracks <= 1) {
-			audio.currentTime = 0;
-			$('.icon-pause').removeClass('icon-play');
-			return;
-		}
-		if (State.shuffle == true) {
-			console.log("shuffling song ("+totalTracks+" total)");
-			State.currentSong = Math.ceil(Math.random()*totalTracks);
-			console.log(State.currentSong);
-		}
+		var totalTracks = State.playlist.length;
 
 		if (direction == 'n')
 			State.currentSong = State.currentSong + 1;
@@ -412,15 +402,6 @@ function y(h,g,b){var c=g||0,d=0;"string"==typeof h?(d=b||h.length,this.a=functi
 		$('.song-metadata').html(prettyTitle);
 		$('.song-metadata').attr('data-go', State.playListLinks[trackNum]);
 		$('.song-metadata').addClass("show-meta");
-
-		State.metaLock = true;
-		clearTimeout(metaHide);
-		// in 3 seconds, remove class unless lock
-		metaHide = setTimeout(function() {
-			State.metaLock = false;
-			if (State.hud == 0)
-				$('.song-metadata').removeClass("show-meta");
-		}, State.fastHide || 3000);
 		};
     h.getURLParameter = function(sParam) {
     	//http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
