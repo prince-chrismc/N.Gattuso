@@ -5,5 +5,5 @@ function openNav() {
 }
 
 function closeNav() {
-    document.getElementById("nav").style.right = "-350px";
+    document.getElementById("nav").style.right = "-250px";
 }
