@@ -2,7 +2,7 @@
 (function($) {
     $(".video").background({
         source: {
-            poster: "./images/ex_equip.jpg",
+            poster: "./images/bg-soundboard_side.jpg",
             webm: "./images/bg-video.webm",
             ogg: "./images/bg-video.ogv",
             mp4: "./images/bg-video.mp4"
@@ -22,21 +22,22 @@ setInterval(function() {
 }, 5000);
 
 // image loader
-$('#container').imagesLoaded()
-  .always( function( instance ) {
-    console.log('loading');
-  })
-  .done( function( instance ) {
-    console.log('all images successfully loaded');
-    preLoader();
-  })
-  .fail( function() {
-    console.log('all images loaded, at least one is broken');
-  })
-  .progress( function( instance, image ) {
-    var result = image.isLoaded ? 'loaded' : 'broken';
-    console.log('image is ' + result + ' for ' + image.img.src );
-  });
+$('#slideshow').imagesLoaded()
+    .done( function( instance ) {
+        console.log('all images successfully loaded');
+        preLoader();
+    })
+    .fail( function() {
+        console.log('all images loaded, at least one is broken');
+        preLoader();
+    })
+    .progress( function( instance, image ) {
+        var result = image.isLoaded ? 'loaded' : 'broken';
+        console.log('image is ' + result + ' for ' + image.img.src );
+    })
+    .always( function( instance ) {
+        console.log('loading');
+    });
 
 
 // preload
