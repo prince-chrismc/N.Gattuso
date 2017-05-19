@@ -69,22 +69,42 @@
                     <div class="row text-center">
                         <h1 class="title">Samples</h1>
                     </div>
+                    <div class="row">
+                    <div class="media col-sm-12" style="padding: 25px; margin-top: 10px;background-color: rgba(255,255,255,0.1)">
+                            <div class="media-left col-sm-4">
+                                  <img class="media-object" src="http://placehold.it/500/fcfcfc/333&amp;text=AUDIO" alt="..." style="height: 250px; width: auto; margin: auto;">
+                            </div>
+                            <div class="media-body col-sm-8" style="width: initial;">
+                                <h2 class="media-heading">Kalimba by Mr. Scruff</h2>
+                                <div class="menu-controls">
+                                    <i class="fa fa-play fa-3x"></i>
+                                    <i class="fa fa-pause fa-3x"></i>
+                                </div>
+                                <audio id="s1" src="images/Kalimba.mp3"></audio>
+                            </div>
+                        <script type="text/javascript">
+                            var audio = $('#s1');
+                            var play = $('.fa-play');
+                            var pause = $('.fa-pause');
+
+                            play.click(function() {
+                               audio.trigger('play');
+                            });
+
+                            pause.click(function() {
+                               audio.trigger('pause');
+                            });
+
+                            console.log(audio.prop("currentTime"));
+
+
+                        </script>
+                        </div>
+                    </div>
+
+
                     <p>main idea: https://github.com/preziotte/party-mode</p>
                     <p>backup: https://wavesurfer-js.org/</p>
-
-                    <div id="mp3_player" class="fade fadeOut">
-                        <div id="audio_box"><audio preload="auto" src="" autoplay="" crossorigin="anonymous"></audio></div>
-                    </div>
-
-
-                    <div class="song-metadata" data-go="images/Kalimba.mp3"></div>
-                    <div class="menu-controls">
-                        <i class="fa fa-step-backward fa-3x"></i>
-                        <i class="fa fa-play fa-3x"></i>
-                        <i class="fa fa-pause fa-3x"></i>
-                        <i class="fa fa-step-forward fa-3x"></i>
-                    </div>
-                    <div id="audio-visual" class="media-object" style="width:100%"></div>
                 </div>
             </div>
         </div>
@@ -110,6 +130,5 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="assets/js/header.js"></script>
         <script src="assets/js/nav.js"></script>
-        <script src="assets/js/samples.js"></script>
     </body>
 </html>
