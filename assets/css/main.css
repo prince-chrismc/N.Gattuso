@@ -170,7 +170,7 @@
     bottom: 0;
     left: 0;
     display: block;
-    background: #222 url(../../images/vinyl.gif) no-repeat center center;
+    background: #000 url(../../images/vinyl.gif) no-repeat center center;
     opacity: 1;
     -moz-opacity: 1;
     -webkit-opacity: 1;
