@@ -10,6 +10,9 @@
         <!-- Web Icon -->
         <link rel="shortcut icon" href="images/music-note.png"/>
 
+        <!-- Formstone -->
+        <link rel="stylesheet" href="assets/css/Formstone/tooltip.css"/>
+
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -108,13 +111,12 @@
                             <h2 class="media-heading">Kalimba by <i>Mr. Scruff</i></h2>
                             <h4>This song is an example.</h4>
                             <div class="menu-controls">
-                                <i class="fa fa-play fa-3x"></i>
-                                <i class="fa fa-pause fa-3x"></i>
+                                <i class="tooltip fa fa-play fa-3x" data-title="Play"></i>
+                                <i class="tooltip fa fa-pause fa-3x" data-title="Pause"></i>
 
-                                <i class="fa fa-volume-down fa-3x"></i>
-                                <i class="fa fa-volume-up fa-3x"></i>
-                                <i class="fa fa-volume-off fa-3x"></i>
-
+                                <i class="tooltip fa fa-volume-down fa-3x" data-title="Volume Down"></i>
+                                <i class="tooltip fa fa-volume-up fa-3x" data-title="Volume Up"></i>
+                                <i class="tooltip fa fa-volume-off fa-3x" data-title="Toggle Mute"></i>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -124,6 +126,14 @@
                             <audio id="s1" src="images/Kalimba.mp3" ontimeupdate="update();"></audio>
                         </div>
                         <script type="text/javascript">
+
+                            $(".tooltip").tooltip({
+                                direction: "left",
+                                follow: true,
+                                delay: 250
+                            });
+
+
                             var audio = $('#s1');
                             var play = $('.fa-play');
                             var pause = $('.fa-pause');
@@ -206,6 +216,7 @@
         </footer>
 
         <!-- Scripts -->
+        <script src="assets/js/Formstone/tooltip.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="assets/js/header.js"></script>
         <script src="assets/js/nav.js"></script>
