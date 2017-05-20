@@ -80,31 +80,40 @@
                                     <i class="fa fa-play fa-3x"></i>
                                     <i class="fa fa-pause fa-3x"></i>
                                 </div>
-                                <audio id="s1" src="images/Kalimba.mp3"></audio>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="color: darkblue; width:0%">
+                                        <span class="sr-only">60% Complete</span>
+                                    </div>
+                                </div>
+                                <audio id="s1" src="images/Kalimba.mp3" ontimeupdate="update();"></audio>
                             </div>
                         <script type="text/javascript">
                             var audio = $('#s1');
                             var play = $('.fa-play');
                             var pause = $('.fa-pause');
+                            pause.hide();
 
                             play.click(function() {
                                audio.trigger('play');
+                                pause.toggle();
+                                play.toggle();
                             });
 
                             pause.click(function() {
                                audio.trigger('pause');
+                                play.toggle();
+                                pause.toggle();
                             });
 
-                            console.log(audio.prop("currentTime"));
-
+                            function update() {
+                                //console.log('timeupdate');
+                                //at x10 progress for development
+                                $('.progress-bar').css('width', ((audio[0].currentTime / audio[0].duration)*10) + '%').attr('aria-valuenow', (audio[0].currentTime / audio[0].duration)*10);
+                            };
 
                         </script>
                         </div>
                     </div>
-
-
-                    <p>main idea: https://github.com/preziotte/party-mode</p>
-                    <p>backup: https://wavesurfer-js.org/</p>
                 </div>
             </div>
         </div>
