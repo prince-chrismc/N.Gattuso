@@ -25,36 +25,6 @@
 
         <!-- Audio Visualizer -->
         <link rel="stylesheet" href="assets/css/samples.css"/>
-
-
-
-
-        <style>
-
-            .progress {
-                height: 2px;
-                background-color: #000d1a;
-                -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
-                -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
-                box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
-
-            }
-
-            .progress-bar {
-                height: 3px;    background: #004d99; /* For browsers that do not support gradients */
-                background: -webkit-linear-gradient(left, #003366, #004d99, #0059b3); /* For Safari 5.1 to 6.0 */
-                background: -o-linear-gradient(right, #003366, #004d99, #0059b3); /* For Opera 11.1 to 12.0 */
-                background: -moz-linear-gradient(right, #003366, #004d99, #0059b3); /* For Firefox 3.6 to 15 */
-                background: linear-gradient(to right, #003366, #004d99, #0059b3); /* Standard syntax (must be last) */
-                -webkit-box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.1);
-                -moz-box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.1);
-                box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.1);
-            }
-
-            .media-heading {
-                margin: 0.5em 0;
-            }
-        </style>
     </head>
     <body>
         <!-- Header -->
@@ -100,92 +70,29 @@
                         <h1 class="title">Samples</h1>
                     </div>
                     <div class="row">
-                    <div class="col-sm-12" style="padding: 25px; margin-top: 10px;background-color: rgba(255,255,255,0.1)">
-                        <div class="col-sm-6    col-md-4">
-                              <img class="media-object" src="http://placehold.it/500/fcfcfc/333&amp;text=AUDIO" alt="..." style="height: 250px; width: auto; max-width: 100%; margin: auto;">
-                        </div>
-                        <div class="col-sm-6    col-md-8">
-                            <h2 class="media-heading">Kalimba by <i>Mr. Scruff</i></h2>
-                            <h4>This song is an example.</h4>
-                            <div class="menu-controls">
-                                <i class="fa fa-play fa-3x" data-toggle="tooltip" title="Play"></i>
-                                <i class="fa fa-pause fa-3x" data-toggle="tooltip" title="Pause"></i>
-
-                                <i class="fa fa-volume-down fa-3x" data-toggle="tooltip" title="Volume Down"></i>
-                                <i class="fa fa-volume-up fa-3x" data-toggle="tooltip" title="Volume Up"></i>
-                                <i class="fa fa-volume-off fa-3x" data-toggle="tooltip" title="Toggle Mute"></i>
-
+                        <div class="col-sm-12" style="padding: 25px; margin-top: 10px;background-color: rgba(255,255,255,0.1)">
+                            <div class="col-sm-6    col-md-4">
+                                  <img class="media-object" src="http://placehold.it/500/fcfcfc/333&amp;text=AUDIO" alt="..." style="height: 250px; width: auto; max-width: 100%; margin: auto;">
                             </div>
-                            <div class="progress">
-                                <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                                    <span class="sr-only">% Complete</span>
+                            <div class="col-sm-6    col-md-8">
+                                <h2 class="media-heading">Kalimba by <i>Mr. Scruff</i></h2>
+                                <h4>This song is an example.</h4>
+                                <div class="menu-controls">
+                                    <i class="fa fa-play fa-3x" data-toggle="tooltip" title="Play"></i>
+                                    <i class="fa fa-pause fa-3x" data-toggle="tooltip" title="Pause"></i>
+
+                                    <i class="fa fa-volume-down fa-3x" data-toggle="tooltip" title="Volume Down"></i>
+                                    <i class="fa fa-volume-up fa-3x" data-toggle="tooltip" title="Volume Up"></i>
+                                    <i class="fa fa-volume-off fa-3x" data-toggle="tooltip" title="Toggle Mute"></i>
+
                                 </div>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                        <span class="sr-only">% Complete</span>
+                                    </div>
+                                </div>
+                                <audio id="s1" src="images/Kalimba.mp3" ontimeupdate="update();"></audio>
                             </div>
-                            <audio id="s1" src="images/Kalimba.mp3" ontimeupdate="update();"></audio>
-                        </div>
-                        <script type="text/javascript">
-                            var audio = $('#s1');
-                            var play = $('.fa-play');
-                            var pause = $('.fa-pause');
-                            var vup = $('.fa-volume-up');
-                            var vdown = $('.fa-volume-down');
-                            var vmute = $('.fa-volume-off');
-
-                            audio[0].volume = 0.8;
-                            pause.hide();
-
-                            play.click(function() {
-                               audio.trigger('play');
-                                pause.toggle();
-                                play.toggle();
-                            });
-
-                            pause.click(function() {
-                               audio.trigger('pause');
-                                play.toggle();
-                                pause.toggle();
-                            });
-
-                            vup.click(volumeUp);
-                            vdown.click(volumeDown);
-                            vmute.click(toggleMuteAudio);
-
-                            audio[0].addEventListener('ended', function() {
-                                audio[0].currentTime = 0;
-                                pause.hide();
-                                play.show();
-                            });
-
-                            function update() {
-                                //console.log('timeupdate');
-                                $('.progress-bar').css('width', ((audio[0].currentTime / audio[0].duration)*100) + '%').attr('aria-valuenow', (audio[0].currentTime / audio[0].duration)*100);
-                            };
-
-                            function volumeUp(){
-                                var volume = audio.prop("volume")+0.2;
-                                if(volume >= 1){
-                                    volume = 1;
-                                }
-                                audio.prop("volume",volume);
-                            }
-
-                            function volumeDown(){
-                                var volume = audio.prop("volume")-0.2;
-                                if(volume <= 0){
-                                    volume = 0;
-                                }
-                                audio.prop("volume",volume);
-                            }
-
-                            function toggleMuteAudio(){
-                                audio.prop("muted",!audio.prop("muted"));
-                            }
-
-                            $(document).ready(function(){
-                                $('[data-toggle="tooltip"]').tooltip({delay: {show: 500, hide: 100}});
-                            });
-
-                        </script>
                         </div>
                     </div>
                 </div>

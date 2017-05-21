@@ -1,202 +1,49 @@
-/* ///////////////////////////////////////////////////////////////////////////////////////////// */
-/*                                                                                               */
-/*                    This is the work of mat.preziotte@gmail.com CC BY-NC 3.0                   */
-/*                              https://github.com/preziotte/party-mode                          */
-/*                                                                                               */
-/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+.progress {
+    height: 2px;
+    background-color: #000d1a;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
 
-/* /////////////////// */
-/* LAYOUT AND UI STUFF */
-/* /////////////////////////////////////////////////////////////////////////////////////////////// */
-
-#mp3_player {
-  display: none;
 }
 
-#mp3_player > div > audio{
-  width:500px;
-  background:#000;
+.progress-bar {
+    height: 3px;
+    background: #004d99; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #003366, #004d99, #0059b3); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #003366, #004d99, #0059b3); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #003366, #004d99, #0059b3); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #003366, #004d99, #0059b3); /* Standard syntax (must be last) */
+    -webkit-box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.1);
+    box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.1);
 }
 
-#audio_box {
-  display: inline;
+.media-heading {
+    margin: 0.5em 0;
+}
+
+.menu-controls {
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+      -webkit-transition: all 300ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+         -moz-transition: all 300ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+           -o-transition: all 300ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+              transition: all 300ms cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
 }
 
 .menu-controls i {
-  z-index: 8;
-  cursor: pointer;
-  display: inline-block;
-  opacity: 0.4;
-  color: white;
-  -webkit-transition: opacity .1s linear;
-     -moz-transition: opacity .1s linear;
-       -o-transition: opacity .1s linear;
-          transition: opacity .1s linear;
+    z-index: 8;
+    cursor: pointer;
+    display: inline-block;
+    opacity: 0.4;
+    color: white;
+    -webkit-transition: opacity .1s linear;
+       -moz-transition: opacity .1s linear;
+         -o-transition: opacity .1s linear;
+            transition: opacity .1s linear;
+    margin: 0.5em;
 }
 
 .menu-controls i:hover {
   opacity: 1
-}
-
-.song-metadata {
-  color: #fff;
-  opacity: 0.5;
-  font-weight: 100;
-  font-size: 26px;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 0px black;
-  z-index: 40;
-  -webkit-transition: opacity .5s linear;
-     -moz-transition: opacity .5s linear;
-       -o-transition: opacity .5s linear;
-          transition: opacity .5s linear;
-}
-
-.song-metadata:hover {
-  opacity: 1;
-}
-
-.menu-controls {
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
-  -webkit-transition: all 300ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-     -moz-transition: all 300ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-       -o-transition: all 300ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-          transition: all 300ms cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
-}
-
-.menu-controls i {
-    margin: 0.5em;
-}
-
-/* /////////////////// */
-/* SVG STUFF ///////// */
-/* /////////////////////////////////////////////////////////////////////////////////////////////// */
-
-/* http://www.colourlovers.com/palette/3406603/Sunset_at_Bayinbuluk */
-svg circle, svg rect {
-  opacity: .35;
-  fill: #FFF;
-  stroke: #000;
-  stroke-width: 2;
-  -webkit-transition: fill 1.5s ease-in-out;
-     -moz-transition: fill 1.5s ease-in-out;
-       -o-transition: fill 1.5s ease-in-out;
-          transition: fill 1.5s ease;
-
-  -webkit-transition: stroke 1.5s ease-in-out;
-     -moz-transition: stroke 1.5s ease-in-out;
-       -o-transition: stroke 1.5s ease-in-out;
-          transition: stroke 1.5s ease;
-}
-
-svg, svg path, svg line, svg g {
-  -webkit-transform-origin: center;
-     -moz-transform-origin: center;
-       -o-transform-origin: center;
-          transform-origin: center;
-}
-
-svg rect:nth-of-type(0) {
-  opacity: 0;
-}
-
-svg .bar rect, svg rect.equal  {
-    -webkit-transform: rotate(0deg);
-       -moz-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-}
-
-svg rect.equal{
-  opacity: 0.85;
-  stroke-width: 0;
-}
-
-svg {
-  z-index: 1;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 0.5s;
-     -moz-transition: -moz-transform 0.5s;
-       -o-transition: -o-transform 0.5s;
-          transition: transform 0.5s;
-}
-
-/* /////////////////// */
-/* ANIMATIONS STUFF // */
-/* /////////////////////////////////////////////////////////////////////////////////////////////// */
-@keyframes draw {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-  }
-}
-
-@-webkit-keyframes draw {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes fade {
-  100% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes fade {
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeIn {
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  100% {
-    opacity: 1;
-  }
-}
-
-/* BLINK KEYFRAME */
-/* http://mudbugmedia.com/blog/2012/10/03/css3-keyframe-animation/ */
-
-@keyframes blink {
-  0% {transform: scale(1,1.6);}
-  2% {transform: scale(1,0);}
-  4% {transform: scale(1,0);}
-  5% {transform: scale(1,1.6);}
-  100% {transform: scale(1,1.6);}
-}
-
-@-webkit-keyframes blink {
-  0% {transform: scale(1,1.6);}
-  2% {transform: scale(1,0);}
-  4% {transform: scale(1,0);}
-  5% {transform: scale(1,1.6);}
-  100% {transform: scale(1,1.6);}
-}
-
-
-/* /////////////////// */
-/* RANGE SLIDER -- http://codepen.io/aronwoost/pen/nlyrf */
-/* /////////////////////////////////////////////////////////////////////////////////////////////// */
-
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
 }
