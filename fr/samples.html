@@ -8,7 +8,7 @@
         <meta name="description" content="DJ N.Gattuso"/>
 
         <!-- Web Icon -->
-        <link rel="shortcut icon" href="images/music-note.png"/>
+        <link rel="shortcut icon" href="../images/music-note.png"/>
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -24,7 +24,7 @@
         <script src="https://use.fontawesome.com/bd21c09c7b.js"></script>
 
         <!-- Audio Visualizer -->
-        <link rel="stylesheet" href="assets/css/samples.css"/>
+        <link rel="stylesheet" href="../assets/css/samples.css"/>
     </head>
     <body>
         <!-- Header -->
@@ -36,6 +36,7 @@
                     </div>
                 </div>
                 <div id="menu" class="menu" href="javascript:void(0)" onclick="openNav()"></div>
+                <div class="lang" onclick="changeLang()">EN</div>
             </div>
         </header>
 
@@ -94,7 +95,7 @@
                                 <div class="row">
                                     <p style="float: right">0:00</p>
                                 </div>
-                                <audio id="s1" src="images/Kalimba.mp3" preload="metadata" ontimeupdate="update1();"></audio>
+                                <audio id="s1" src="../images/Kalimba.mp3" preload="metadata" ontimeupdate="update1();"></audio>
                             </div>
                         </div>
                     </div>
@@ -123,7 +124,7 @@
                                 <div class="row">
                                     <p style="float: right">0:00</p>
                                 </div>
-                                <audio id="s2" src="images/Maid%20with%20the%20Flaxen%20Hair.mp3" ontimeupdate="update2();"></audio>
+                                <audio id="s2" src="../images/Maid%20with%20the%20Flaxen%20Hair.mp3" ontimeupdate="update2();"></audio>
                             </div>
                         </div>
                     </div>
@@ -150,8 +151,9 @@
 
         <!-- Scripts -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="assets/js/header.js"></script>
-        <script src="assets/js/nav.js"></script>
-        <script src="assets/js/samples.js"></script>
+        <script src="../assets/js/header.js"></script>
+        <script src="../assets/js/lang.js"></script>
+        <script src="../assets/js/nav.js"></script>
+        <script src="../assets/js/samples.js"></script>
     </body>
 </html>

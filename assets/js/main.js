@@ -2,10 +2,10 @@
 (function($) {
     $(".video").background({
         source: {
-            poster: "./images/bg-soundboard_side.jpg",
-            webm: "./images/bg-video.webm",
-            ogg: "./images/bg-video.ogv",
-            mp4: "./images/bg-video.mp4"
+            poster: "../images/bg-soundboard_side.jpg",
+            webm: "../images/bg-video.webm",
+            ogg: "../images/bg-video.ogv",
+            mp4: "../images/bg-video.mp4"
     }});
 })(jQuery);
 

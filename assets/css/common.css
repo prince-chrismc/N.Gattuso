@@ -93,6 +93,37 @@ header .menu {
     cursor:pointer;
 }
 
+header .menu:hover {
+    color: #0059b3;
+    text-shadow: 0 0 20px #656565;
+}
+
+header .lang {
+    position: absolute;
+    top: 50%;
+    right: 6.5em;
+    transform: translateY(-50%);
+    -webkit-backface-visibility: hidden; /* fix chrome bug */
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    font-size: 1.5em;
+    cursor:pointer;
+}
+
+header .lang:hover {
+    color: #0059b3;
+    text-shadow: 0 0 20px #656565;
+}
+
+@media screen and (max-width: 768px)
+{
+    header .lang {
+        right: 3.75em;
+    }
+}
+
 /* Nav Menu */
 #nav2 {
     height: 100%; /* 100% Full-height */
