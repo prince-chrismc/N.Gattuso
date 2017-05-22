@@ -4,6 +4,8 @@ var pause1 = $('.main-content').find('.fa-pause').first();
 var vup1 = $('.main-content').find('.fa-volume-up').first();
 var vdown1 = $('.main-content').find('.fa-volume-down').first();
 var vmute1 = $('.main-content').find('.fa-volume-off').first();
+var tminus1 = $('.main-content').find('p').first();
+var dur1 = $('.main-content').find('p').last();
 
 var audio2 = $('#s2');
 var play2 = $('.main-content').find('.fa-play').last();
@@ -11,6 +13,7 @@ var pause2 = $('.main-content').find('.fa-pause').last();
 var vup2 = $('.main-content').find('.fa-volume-up').last();
 var vdown2 = $('.main-content').find('.fa-volume-down').last();
 var vmute2 = $('.main-content').find('.fa-volume-off').last();
+var tminus2 = $('.main-content').find('p').last();
 
 audio1[0].volume = 0.8;
 pause1.hide();
@@ -81,6 +84,12 @@ function pausesong1() {
 function update1() {
     //console.log('timeupdate');
     $('.main-content').find('.progress-bar').first().css('width', ((audio1[0].currentTime / audio1[0].duration)*100) + '%').attr('aria-valuenow', (audio1[0].currentTime / audio1[0].duration)*100);
+
+    var rem = parseInt(audio1[0].duration - audio1[0].currentTime, 10),
+    mins = Math.floor(rem/60,10),
+    secs = rem - mins*60;
+
+    tminus1.text('-' + mins + ':' + (secs > 9 ? secs : '0' + secs));
 };
 
 function volumeUp1(){
@@ -119,6 +128,12 @@ function pausesong2() {
 function update2() {
     //console.log('timeupdate');
     $('.main-content').find('.progress-bar').last().css('width', ((audio2[0].currentTime / audio2[0].duration)*100) + '%').attr('aria-valuenow', (audio2[0].currentTime / audio2[0].duration)*100);
+
+    var rem = parseInt(audio2[0].duration - audio2[0].currentTime, 10),
+    mins = Math.floor(rem/60,10),
+    secs = rem - mins*60;
+
+    tminus2.text('-' + mins + ':' + (secs > 9 ? secs : '0' + secs));
 };
 
 function volumeUp2(){
