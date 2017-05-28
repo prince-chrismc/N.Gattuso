@@ -25,11 +25,12 @@
 .next, /* for multi pane */
 .prev{
     opacity: 0.5;
+    z-index: 3;
+    -webkit-transform: scale(0.75,0.75); /* Safari */
     -moz-transform: scale(0.75,0.75); /* FF */
     -ms-transform: scale(0.75,0.75); /* IE 9 */
-    -webkit-transform: scale(0.75,0.75); /* Safari */
+    -o-transform: scale(0.75,0.75); /* Opera */
     transform: scale(0.75,0.75); /* Standard syntax */
-    z-index: 3;
 }
 
 .active{
@@ -43,12 +44,11 @@
 
 @media screen and (max-width: 768px){
     .active{
-        opacity: 1;
+        -webkit-transform: scale(1,1); /* Safari */
         -moz-transform: scale(1,1); /* FF */
         -ms-transform: scale(1,1); /* IE 9 */
-        -webkit-transform: scale(1,1); /* Safari */
+        -o-transform: scale(1,1); /* Opera */
         transform: scale(1,1); /* Standard syntax */
-        z-index: 5;
     }
 }
 
@@ -58,15 +58,17 @@
     top: 50%;
     padding: 15px;
     box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.5);
-    transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
     border-radius: 50%;
     color: rgba(255, 255, 255, 0.75);
     font-size: 30px;
     display: inline-block;
     z-index: 10;
+    -webkit-transform: translate(0px, -50%);
+    -moz-transform: translate(0px, -50%);
+    -ms-transform: translate(0px, -50%);
+    -o-transform: translate(0px, -50%);
+    transform: translate(0px, -50%);
+    margin-top: -27.5px;
 }
 
 .carosel-control-left {
