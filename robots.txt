@@ -1,2 +1,2 @@
-assets/*
-images/*
+Disallow: /assets/
+Disallow: /images/
