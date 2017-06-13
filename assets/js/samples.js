@@ -5,7 +5,7 @@ var vup1 = $('.main-content').find('.fa-volume-up').first();
 var vdown1 = $('.main-content').find('.fa-volume-down').first();
 var vmute1 = $('.main-content').find('.fa-volume-off').first();
 var tminus1 = $('.main-content').find('p').first();
-var dur1 = $('.main-content').find('p').last();
+var prog1 = $('#prog1');
 
 var audio2 = $('#s2');
 var play2 = $('.main-content').find('.fa-play').last();
@@ -14,6 +14,7 @@ var vup2 = $('.main-content').find('.fa-volume-up').last();
 var vdown2 = $('.main-content').find('.fa-volume-down').last();
 var vmute2 = $('.main-content').find('.fa-volume-off').last();
 var tminus2 = $('.main-content').find('p').last();
+var prog2 = $('#prog2');
 
 audio1[0].volume = 0.8;
 pause1.hide();
@@ -27,9 +28,7 @@ play1.click(function() {
     playsong1();
 });
 
-pause1.click(function() {
-   pausesong1();
-});
+pause1.click(pausesong1);
 
 play2.click(function() {
     if(isPlaying(audio1)) {
@@ -38,9 +37,7 @@ play2.click(function() {
     playsong2();
 });
 
-pause2.click(function() {
-   pausesong2();
-});
+pause2.click(pausesong2);
 
 vup1.click(volumeUp1);
 vdown1.click(volumeDown1);
@@ -62,13 +59,13 @@ audio2[0].addEventListener('ended', function() {
     play2.show();
 });
 
-
-
-
+prog1.click(seek1);
+prog2.click(seek2);
 
 /* ----------------------------------------------------------------------- */
 /*                             UTILITY CODE !                              */
 /* ----------------------------------------------------------------------- */
+
 function playsong1() {
    audio1.trigger('play');
     pause1.toggle();
@@ -110,6 +107,20 @@ function volumeDown1(){
 
 function toggleMuteAudio1(){
     audio1.prop("muted",!audio1.prop("muted"));
+}
+
+function seek1(e){
+    //console.log("pb1 cliked!",e);
+    var percent = e.offsetX / this.offsetWidth;
+    //console.log(percent);
+    audio1[0].currentTime = percent * audio1[0].duration;
+}
+
+function seek2(e){
+    //console.log("pb1 cliked!",e);
+    var percent = e.offsetX / this.offsetWidth;
+    //console.log(percent);
+    audio2[0].currentTime = percent * audio2[0].duration;
 }
 
 /* ----------------------------------------------------------------------- */
