@@ -1,14 +1,11 @@
 /*
  * Noel Delgado | @pixelia_me
- *
- * Music by Term and Conditions Mixes
- * https://soundcloud.com/term-and-conditions-mixes/new-year-dubstep-minimix
 */
 
 var media = [
   "https://ngattuso.com/images/Kalimba.mp3"
 ],
-  fftSize = 1024,
+  fftSize = 2048,
   // [32, 64, 128, 256, 512, 1024, 2048]
 
   background_color = "rgba(0, 0, 1, 1)",
@@ -21,9 +18,9 @@ var media = [
   TOTAL_STARS = 1500,
   STARS_BREAK_POINT = 140,
   stars = [],
-  waveform_color = "rgba(29, 36, 57, 0.05)",
+  waveform_color = "rgba(157, 242, 157, 0.05)",
   waveform_color_2 = "rgba(0,0,0,0)",
-  waveform_line_color = "rgba(157, 242, 157, 0.11)",
+  waveform_line_color = "rgba(157, 242, 157, 0.45)",
   waveform_line_color_2 = "rgba(157, 242, 157, 0.8)",
   waveform_tick = 0.05,
   TOTAL_POINTS = fftSize / 2,
@@ -34,11 +31,11 @@ var media = [
   bubble_avg_line_color_2 = "rgba(77, 218, 248, 1)",
   bubble_avg_tick = 0.001,
   TOTAL_AVG_POINTS = 64,
-  AVG_BREAK_POINT = 100,
+  AVG_BREAK_POINT = 75,
   avg_points = [],
-  SHOW_STAR_FIELD = true,
+  SHOW_STAR_FIELD = false,
   SHOW_WAVEFORM = true,
-  SHOW_AVERAGE = true,
+  SHOW_AVERAGE = false,
   AudioContext = window.AudioContext || window.webkitAudioContext,
   floor = Math.floor,
   round = Math.round,
