@@ -69,7 +69,7 @@ $(document).ready(function(){
                 human = 'human';
 
             $.ajax({
-                url:'https://formspree.io/dj_nick_gattuso@hotmail.com',
+                url:'https://formspree.io/info@ngattuso.com',
                 method:'POST',
                 data:{
                     _subject:'New Message From ngattuso.com!',
