@@ -1,9 +1,9 @@
 var audio1 = $('#s1');
 var play1 = $('.main-content').find('.fa-play').first();
 var pause1 = $('.main-content').find('.fa-pause').first();
-var vup1 = $('.main-content').find('.fa-volume-up').first();
-var vdown1 = $('.main-content').find('.fa-volume-down').first();
-var vmute1 = $('.main-content').find('.fa-volume-off').first();
+var volume1 = $('.main-content').find('.fa-volume-down').first();
+var range1 = $('.main-content').find('.range-slider').first();
+var slider1 = $('.main-content').find('.range-slider__range').first();
 var tminus1 = $('.main-content').find('p').first();
 var prog1 = $('#prog1');
 var tooltip1_shown = false;
@@ -11,9 +11,9 @@ var tooltip1_shown = false;
 var audio2 = $('#s2');
 var play2 = $('.main-content').find('.fa-play').last();
 var pause2 = $('.main-content').find('.fa-pause').last();
-var vup2 = $('.main-content').find('.fa-volume-up').last();
-var vdown2 = $('.main-content').find('.fa-volume-down').last();
-var vmute2 = $('.main-content').find('.fa-volume-off').last();
+var volume2 = $('.main-content').find('.fa-volume-down').last();
+var range2 = $('.main-content').find('.range-slider').last();
+var slider2 = $('.main-content').find('.range-slider__range').last();
 var tminus2 = $('.main-content').find('p').last();
 var prog2 = $('#prog2');
 var tooltip2_shown = false;
@@ -21,8 +21,10 @@ var tooltip2_shown = false;
 
 audio1[0].volume = 0.8;
 pause1.hide();
+range1.hide();
 audio2[0].volume = 0.8;
 pause2.hide();
+range2.hide();
 
 play1.click(function() {
     if(isPlaying(audio2)) {
@@ -42,13 +44,11 @@ play2.click(function() {
 
 pause2.click(pausesong2);
 
-vup1.click(volumeUp1);
-vdown1.click(volumeDown1);
-vmute1.click(toggleMuteAudio1);
+volume1.hover(function(){ volume1.hide(); range1.show(); });
+range1.mouseleave(function(){ range1.hide(); volume1.show(); });
 
-vup2.click(volumeUp2);
-vdown2.click(volumeDown2);
-vmute2.click(toggleMuteAudio2);
+volume2.hover(function(){ volume2.hide(); range2.show(); });
+range2.mouseleave(function(){ range2.hide(); volume2.show(); });
 
 audio1[0].addEventListener('ended', function() {
     audio1[0].currentTime = 0;
@@ -64,6 +64,7 @@ audio2[0].addEventListener('ended', function() {
 
 prog1.click(seek1);
 prog2.click(seek2);
+
 prog1.mousemove(function(e){
     var offset = this.offsetWidth;
     if(!tooltip1_shown){
@@ -237,3 +238,24 @@ function isPlaying(audelem) { return !audelem[0].paused; }
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip({delay: {show: 500, hide: 100}});
 });
+
+var rangeSlider = function(){
+  var slider = $('.range-slider'),
+      range = $('.range-slider__range'),
+      value = $('.range-slider__value');
+
+  slider.each(function(){
+
+    value.each(function(){
+      var value = $(this).prev().attr('value');
+      $(this).html(value);
+    });
+
+    range.on('input', function(){
+        $($(this).attr('for'))[0].volume = this.value/100;
+        $(this).next(value).html(this.value);
+    });
+  });
+};
+
+rangeSlider();
