@@ -1,0 +1,208 @@
+/* text feilds */
+.contact-form .input-group {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3.5em;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    outline: 0;
+    padding-right: 0.5em;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.25em;
+}
+
+.contact-form .input-group-addon {
+    background: transparent;
+    border: none;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3.5em;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding-left: 0.5em;
+}
+
+
+
+/* tectarea */
+.contact-form textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: 0;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.25em;
+    display: block;
+    width: 100%;
+    margin: 0.5em 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 0.75em 1em;
+    resize: vertical;
+}
+
+@media screen and (max-width: 500px){
+    .contact-form textarea {
+        font-size: 1em;
+    }
+}
+
+.contact-form textarea:focus {
+    border-color: #0059b3;
+    -webkit-box-shadow: 0px 0px 15px 0px #0059b3;
+    -moz-box-shadow: 0px 0px 15px 0px #0059b3;
+    -ms-box-shadow: 0px 0px 15px 0px #0059b3;
+    -o-box-shadow: 0px 0px 15px 0px #0059b3;
+    box-shadow: 0px 0px 15px 0px #0059b3;
+}
+
+/* select */
+.contact-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 3.5em;
+    margin: 0.5em 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    outline: 0;
+    padding: 0 1em;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.25em;
+}
+
+@media screen and (max-width: 500px){
+    .contact-form select {
+        font-size: 1em;
+    }
+}
+
+.contact-form select:focus {
+    border-color: #0059b3;
+    -webkit-box-shadow: 0px 0px 15px 0px #0059b3;
+    -moz-box-shadow: 0px 0px 15px 0px #0059b3;
+    -ms-box-shadow: 0px 0px 15px 0px #0059b3;
+    -o-box-shadow: 0px 0px 15px 0px #0059b3;
+    box-shadow: 0px 0px 15px 0px #0059b3;
+}
+
+/* check and radio */
+.contact-form input[type="checkbox"], /* this hides the default item */
+.contact-form input[type="radio"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    display: block;
+    float: left;
+    margin-right: -2em;
+    opacity: 0;
+    width: 1em;
+    z-index: -1;
+}
+
+.contact-form input[type="checkbox"] + label, /* this sets the text possitioning*/
+.contact-form input[type="radio"] + label {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.25em;
+    font-weight: 400;
+    padding-left: 2.85em;
+    padding-right: 0.75em;
+    position: relative;
+    margin: 1em 0;
+    color: #a5a9ad;
+	line-height: 1.75em;
+}
+
+@media screen and (max-width: 500px){
+    .contact-form input[type="checkbox"] + label,
+    .contact-form input[type="radio"] + label {
+        font-size: 1em;
+    }
+}
+
+.contact-form input[type="checkbox"] + label:before, /* this is the square for the check box */
+.contact-form input[type="radio"] + label:before {
+	display: inline-block;
+	height: 1.75em;
+	width: 1.75em;
+	top: 0;
+	left: 0;
+	line-height: 1.75em;
+	position: absolute;
+	text-align: center;
+	content: '';
+    font-size: 1em;
+	text-transform: none !important;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+}
+
+.contact-form input[type="checkbox"]:not(:checked) + label:after, /* checked mark aspect changes */
+.contact-form input[type="checkbox"]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    color: white !important;
+    top: -0.1em;
+    left: .2em;
+    font-size: 2em;
+    line-height: 0.75;
+    transition: all .2s;
+}
+
+.contact-form input[type="checkbox"]:not(:checked) + label:after { /* checked mark aspect changes */
+    opacity: 0;
+    transform: scale(0);
+}
+.contact-form input[type="checkbox"]:checked + label:after { /* checked mark aspect changes */
+    opacity: 1;
+    transform: scale(1);
+}
+
+.contact-form input[type="checkbox"]:checked + label:before, /* this is the square for the check box */
+.contact-form input[type="radio"]:checked + label:before,
+.contact-form input[type="checkbox"]:focus + label:before,
+.contact-form input[type="radio"]:focus + label:before {
+    border-color: #0059b3;
+    -webkit-box-shadow: 0px 0px 15px 0px #0059b3;
+    -moz-box-shadow: 0px 0px 15px 0px #0059b3;
+    -ms-box-shadow: 0px 0px 15px 0px #0059b3;
+    box-shadow: 0px 0px 15px 0px #0059b3;
+}
+
+.contact-form input[type="checkbox"] + label:before { /* individual barder radius */
+    border-radius: 4px;
+}
+
+.contact-form input[type="radio"] + label:before { /* individual barder radius */
+    border-radius: 100%;
+}
