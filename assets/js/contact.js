@@ -134,3 +134,12 @@ $("#category").change(function() {
     else
         $(this).css("color", "white");
 });
+
+
+$('.input-group').focusin(function() {
+    this.focus();
+});
+
+$('.input-group').focusout(function() {
+    this.blur();
+});

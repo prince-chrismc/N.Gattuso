@@ -73,13 +73,13 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="row input-group">
+                                    <div class="row input-group" tabindex="-1">
                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                         <input name="name" id="name" placeholder="Name" type="text" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="row  input-group">
+                                    <div class="row input-group" tabindex="-1">
                                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                         <input name="email" id="email" placeholder="Email" type="email" />
                                     </div>
@@ -87,7 +87,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div class="select-wrapper">
+                                    <div class="row input-group" tabindex="-1">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                         <select name="category" id="category">
                                             <option style="color: black;" value="0" disabled selected hidden>- Category -</option>
                                             <option style="color: black;" value="wedding">Wedding</option>
