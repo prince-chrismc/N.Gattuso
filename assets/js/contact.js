@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    $("#category").css("color", "#a5a9ad");
+
     //forcing fullscreen view
     HandlePadding();
 
