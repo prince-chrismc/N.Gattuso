@@ -53,6 +53,17 @@
 }
 
 /* controls */
+.main-content a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+}
+
+.main-content a:hover,
+.main-content a:active {
+  text-decoration: none;
+  color: white;
+}
+
 .carosel-control {
     position: absolute;
     top: 50%;
