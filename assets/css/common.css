@@ -275,6 +275,16 @@ header .lang:hover {
     width: 70%;
 }
 
+.main-content a {
+    color: white;
+    text-decoration: underline;
+}
+
+.main-content a:hover,
+.main-content a:active {
+    color: #0059b3;
+}
+
 .main-content .icons {
     text-align: center;
 }
