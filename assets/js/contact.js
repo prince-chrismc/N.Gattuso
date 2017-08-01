@@ -110,7 +110,7 @@ $('form#form').submit(function(e) {
             },
             error:function(){
                 $('.sending').remove();
-                $('form#form').before('<div class="container-fluid"><div class="success"><h3><b>Oh no!</b> Something went horribly wrong. <a href="mailto:dj_nick_gattuso@hotmail.com">Contact me directly</a> or try again later.</h3></form>');
+                $('form#form').before('<div class="container-fluid"><div class="success"><h3><b>Oh no!</b> Something went horribly wrong. <a href="mailto:info@ngattuso.com">Contact me directly</a> or try again later.</h3></form>');
             }
         });
     }
