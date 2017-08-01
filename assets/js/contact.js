@@ -9,6 +9,7 @@ $(window).resize(function(){
     HandlePadding();
 });
 
+/* -------------------------------------     event function     ---------------------------------- */
 $("#category").change(function() {
     if($(this).val() == "0")
         $(this).css("color", "#a5a9ad");
@@ -24,20 +25,25 @@ $('.input-group').focusout(function() {
     $(this).removeClass("input-group-focus");
 });
 
-var HandlePadding = function(){
-    $('body').css("height", "auto");
-    var dif = $(window).height() - $('body').height();
-    //console.log("win: " + $(window).height() +   '   doc: ' + $(document).height() + " - body: " + $('body').height() + " = " + dif);
-    var padding = $('.main-content').innerHeight() - $('.main-content').height();
-    if(dif+padding >= 0)
-        $('.main-content').css("padding", (dif+padding)/2+'px 0');
-    else
-        $('.main-content').css("padding", "");
-    $('body').css("height", "");
-}
+$("button[type=reset]").click(function(){
+    $("form#form").toggle("slide", { direction: "left" }, 250);
 
+    $("form#form")[0].reset();
+    $("#category").css("color", "#a5a9ad");
+    $('.error').remove();
 
-// form submission
+    $("form#form").toggle("slide", { direction: "right" }, 500);
+});
+
+$('form#post-sub').submit(function(e) {
+    e.preventDefault();
+    $("form#form")[0].reset();
+    $("#category").css("color", "#a5a9ad");
+    $('form#post-sub').slideUp("fast");
+    $('form#form').slideUp("slow");
+});
+
+/* -------------------------------------     form submission     ---------------------------------- */
 $('form#form').submit(function(e) {
     e.preventDefault();
 
@@ -117,20 +123,15 @@ $('form#form').submit(function(e) {
     return false;
 });
 
-$("button[type=reset]").click(function(){
-    $("form#form").toggle("slide", { direction: "left" }, 250);
-
-    $("form#form")[0].reset();
-    $("#category").css("color", "#a5a9ad");
-    $('.error').remove();
-
-    $("form#form").toggle("slide", { direction: "right" }, 500);
-});
-
-$('form#post-sub').submit(function(e) {
-    e.preventDefault();
-    $("form#form")[0].reset();
-    $("#category").css("color", "#a5a9ad");
-    $('form#post-sub').slideUp("fast");
-    $('form#form').slideUp("slow");
-});
+/* -------------------------------------     utility function     ---------------------------------- */
+var HandlePadding = function(){
+    $('body').css("height", "auto");
+    var dif = $(window).height() - $('body').height();
+    //console.log("win: " + $(window).height() +   '   doc: ' + $(document).height() + " - body: " + $('body').height() + " = " + dif);
+    var padding = $('.main-content').innerHeight() - $('.main-content').height();
+    if(dif+padding >= 0)
+        $('.main-content').css("padding", (dif+padding)/2+'px 0');
+    else
+        $('.main-content').css("padding", "");
+    $('body').css("height", "");
+}
