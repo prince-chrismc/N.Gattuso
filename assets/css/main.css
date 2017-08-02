@@ -19,7 +19,7 @@
 }
 
 .content-centered {
-    position: relative;
+    position: absolute;
     float: left;
     top: 50%;
     left: 50%;
