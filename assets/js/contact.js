@@ -113,6 +113,9 @@ $('form#form').submit(function(e) {
         var name = $('#name').val();
         //get the name field value
         var email = $('#email').val();
+        //get the event type
+        var categorie = $('#category').val();
+        if(categorie == '0') categorie = (lang == 'en') ? 'No selection' : 'Pas de seclection';
         //get the comments
         var message = $('#message').val();
         //get copy selected
@@ -132,6 +135,7 @@ $('form#form').submit(function(e) {
                 _cc:cc,
                 name:name,
                 email:email,
+                categorie:categorie,
                 message:message,
                 human:human,
             },
