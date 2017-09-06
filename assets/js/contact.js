@@ -57,20 +57,20 @@ $('form#form').submit(function(e) {
     //for each required input require make sure theres a value
     if(jQuery.trim($("#name").val()) == '') {
         if(lang == 'en') {
-            $("#name").parent().append('<span class="error"><b>Oops!</b> You forgot to enter your name</span>');
+            $("#name").parent().parent().append('<span class="error"><b>Oops!</b> You forgot to enter your name</span>');
         }
         else {
-            $("#name").parent().append("<span class='error'><b>Oops!</b> Vous avez oublié d'entrer votre nom</span>");
+            $("#name").parent().parent().append("<span class='error'><b>Oops!</b> Vous avez oublié d'entrer votre nom</span>");
         }
         hasError = true;
     }
 
     if(jQuery.trim($("#email").val()) == '') {
         if(lang == 'en') {
-            $("#email").parent().append('<span class="error"><b>Oops!</b> You forgot to enter your e-mail</span>');
+            $("#email").parent().parent().append('<span class="error"><b>Oops!</b> You forgot to enter your e-mail</span>');
         }
         else {
-            $("#email").parent().append("<span class='error'><b>Oops!</b> Vous avez oublié d'entrer votre e-mail</span>");
+            $("#email").parent().parent().append("<span class='error'><b>Oops!</b> Vous avez oublié d'entrer votre e-mail</span>");
         }
         hasError = true;
     }
@@ -79,10 +79,10 @@ $('form#form').submit(function(e) {
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
         if(!emailReg.test(jQuery.trim($("#email").val()))) {
             if(lang == 'en') {
-                $("#email").parent().append('<span class="error"><b>Oops!</b> You entered an invalid e-mail</span>');
+                $("#email").parent().parent().append('<span class="error"><b>Oops!</b> You entered an invalid e-mail</span>');
             }
             else {
-                $("#email").parent().append("<span class='error'><b>Oops!</b> Vous avez entré un e-mail non valide</span>");
+                $("#email").parent().parent().append("<span class='error'><b>Oops!</b> Vous avez entré un e-mail non valide</span>");
             }
             hasError = true;
         }
