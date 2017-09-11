@@ -139,19 +139,23 @@
 
 #slideshow #slide1
 {
-    background-image: url("../../images/bg-soundboard_light.jpg");
+    background-image: url("../../images/background/soundboard_light.jpg");
 }
 #slideshow #slide2
 {
-    background-image: url("../../images/bg-soundboard_side.jpg");
+    background-image: url("../../images/background/soundboard_side.jpg");
 }
 #slideshow #slide3
 {
-    background-image: url("../../images/bg-selfie_bw.jpg");
+    background-image: url("../../images/background/selfie_bw.jpg");
 }
 #slideshow #slide4
 {
-    background-image: url("../../images/bg-soundboard_dark.jpg");
+    background-image: url("../../images/background/soundboard_dark.jpg");
+}
+#slideshow #slide6
+{
+    background-image: url("../../images/background/soundboard_fireworks.jpg");
 }
 
 #preload {
