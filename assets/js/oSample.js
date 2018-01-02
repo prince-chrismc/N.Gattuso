@@ -110,7 +110,7 @@ function Sample(obj, title, desc, src_audio, src_cover) {
     this.audio[0].addEventListener('ended', this.stop);
     this.audio[0].addEventListener('ontimeupdate', this.update);
     this.prog.click(this.seek);
-    this.prog.mouseover(this.setTooltip);
+    this.prog.mousemove(this.setTooltip);
     this.prog.mouseleave(this.removeTooltip);
 
     // utility functions
