@@ -65,7 +65,7 @@ function Sample(obj, title, desc, src_audio, src_cover) {
             $('.tooltip').css('margin-top', '-5px');
         }
         $('.tooltip').css('left', e.offsetX.toString() + 'px');
-        $('.tooltip-inner').text( this.track(e,offset) );
+        $('.tooltip-inner').text( track(e,offset, this.id.replace('prog', '')) );
     }
 
     this.removeTooltip = function() {
@@ -78,18 +78,6 @@ function Sample(obj, title, desc, src_audio, src_cover) {
         var percent = e.offsetX / this.prog.offsetWidth;
         //console.log(percent);
         this.audio[0].currentTime = Math.floor(percent * this.audio[0].duration);
-    }
-
-    this.prog.track = function(e, offset) {
-        var percent = e.offsetX / offset;
-        var time = percent * this.audio[0].duration;
-        mins = Math.floor(time/60,10),
-        secs = Math.floor(time - mins*60);
-        var text = '' + mins.toString() + ':';
-        text += secs > 9 ? secs.toString() : '0' + secs.toString();
-        //console.log(text);
-
-        return text;
     }
 
     this.update = function() {
@@ -142,5 +130,18 @@ function Sample(obj, title, desc, src_audio, src_cover) {
         obj.root.innerHTML += '<div class="col-sm-6    col-md-8">';
         obj.root.innerHTML += '<h2 class="media-heading">' + obj.title + ' by <i>N.Gattuso</i></h2><h4>' + obj.desc + '</h4>';
         obj.root.innerHTML += '<div class="menu-controls"><i id="play_btn' + obj.id + '" class="fa fa-play fa-3x" data-toggle="tooltip" title="Play"></i><i id="pause_btn' + obj.id + '" class="fa fa-pause fa-3x" data-toggle="tooltip" title="Pause"></i><i id="volume_btn' + obj.id + '" class="fa fa-volume-down fa-3x" data-toggle="tooltip" title="Volume Adjust"></i><div id="range' + obj.id + '" class="range-slider" data-toggle="tooltip" title="Volume Adjust"><input id="slider' + obj.id + '" class="range-slider__range" type="range" value="80" min="0" max="100" step="5" for="#s2"><span class="range-slider__value">0</span></div></div><div id="prog' + obj.id + '" class="progress" data-toggle="tooltip" title="." data-trigger="manual"><div id="prog_bar' + obj.id + '" class="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div><div class="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div><div class="row"><p id="timestamp' + obj.id + '" style="float: right">0:00</p></div><audio id="audio' + obj.id + '" src="' + src_audio + '" preload="metadata"></audio></div>';
+    }
+    
+    function track(e, offset, id) {
+        var percent = e.offsetX / offset;
+        var audio = $('#audio' + id);
+        var time = percent * audio[0].duration;
+        mins = Math.floor(time/60,10),
+        secs = Math.floor(time - mins*60);
+        var text = '' + mins.toString() + ':';
+        text += secs > 9 ? secs.toString() : '0' + secs.toString();
+        //console.log(text);
+
+        return text;
     }
 }
