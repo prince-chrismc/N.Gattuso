@@ -64,7 +64,7 @@ function Sample(obj, title, desc, src_audio, src_cover) {
             $(this).tooltip('show');
             $('.tooltip').css('margin-top', '-5px');
         }
-        $('.tooltip').css('left', (e.offsetX - 6).toString() + 'px');
+        $('.tooltip').css('left', e.offsetX.toString() + 'px');
         $('.tooltip-inner').text( track(e,offset, this.id.replace('prog', '')) );
     }
 
