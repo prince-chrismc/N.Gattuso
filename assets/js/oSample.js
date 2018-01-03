@@ -81,24 +81,25 @@ function Sample(obj, title, desc, src_audio, src_cover) {
         audio[0].currentTime = Math.floor(percent * audio[0].duration);
     }
 
-    this.showVolumeButton = function(id) {
+    this.showVolumeButton = function() {
+        var id = this.id.replace('range', '')
         $('#range' + id).hide();
         $('#volume_btn' + id).show();
     }
 
     this.showVolumeSlider = function() {
-        $('#volume_btn' + this.id).hide();
-        $('#range' + this.id).show();
+        var id = this.id.replace('volume_btn', '')
+        $('#volume_btn' + id).hide();
+        $('#range' + id).show();
     }
 
     /* event listeners */
     this.play_btn.click(this.play);
     this.pause_btn.click(this.pause);
     this.root.addEventListener(g_PauseEvent, this.pause);
-    this.volume_btn.hover(this.showVolumeSlider(this.id));
-    this.range.mouseleave(this.showVolumeButton(this.id));
+    this.volume_btn.hover(this.showVolumeSlider);
+    this.range.mouseleave(this.showVolumeButton);
     this.audio[0].addEventListener('ended', this.stop);
-    this.audio[0].addEventListener('ontimeupdate', this.update);
     this.prog.click(this.seek);
     this.prog.mousemove(this.setTooltip);
     this.prog.mouseleave(this.removeTooltip);
