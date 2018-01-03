@@ -43,10 +43,10 @@ function Sample(obj, title, desc, src_audio, src_cover) {
     }
 
     this.pause = function() {
-        this.audio.trigger('pause');
+        $('#' + this.id.replace('pause_btn', 'audio')).trigger('pause');
         g_SongPlaying = false;
-        this.play_btn.show();
-        this.pause_btn.hide();
+        $(this).toggle();
+        $('#' + this.id.replace('pause', 'play')).toggle();
     }
 
     this.stop = function() {
