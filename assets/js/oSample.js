@@ -50,11 +50,11 @@ function Sample(obj, title, desc, src_audio, src_cover) {
     }
 
     this.stop = function() {
-        this.audio.trigger('pause');
-        this.audio.currentTime = 0;
+        $(this).trigger('pause');
+        this.currentTime = 0;
         g_SongPlaying = false;
-        this.play_btn.show();
-        this.pause_btn.hide();
+        $('#' + this.id.replace('audio', 'play_btn')).show();
+        $('#' + this.id.replace('audio', 'pause_btn')).hide();
     }
 
     this.setTooltip = function(e) {
