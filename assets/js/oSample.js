@@ -149,7 +149,7 @@ function update(id) {
 function volume(id) {
     var slider = $('#slider' + id);
     slider.next().html(slider[0].value);
-    $(slider[0].attr('for'))[0].volume = slider[0].value / 100;
+    $(slider.attr('for'))[0].volume = slider[0].value / 100;
 }
 
 $(document).ready(function() {
