@@ -17,7 +17,7 @@ function Sample(obj, title, desc, src_audio, src_cover) {
     generateHTML(this, src_audio, src_cover);
 
     this.audio = $('#audio' + this.id);
-    this.play_btn = $('#play_btn' + this.id);
+    this.play_btn = $('#play_btn' + this.id);    
     this.pause_btn = $('#pause_btn' + this.id);
     this.volume_btn = $('#volume_btn' + this.id);
     this.range = $('#range' + this.id);
@@ -36,10 +36,10 @@ function Sample(obj, title, desc, src_audio, src_cover) {
     this.play = function() {
         document.dispatchEvent(g_PauseEvent);
         while(g_SongPlaying) { }
-        this.play_btn.toggle();
-        this.pause_btn.toggle();
+        $(this).toggle();
+        $('#' + this.id.replace('play', 'pause')).toggle();
         g_SongPlaying = true;
-        this.audio.trigger('play');
+        $('#' + this.id.replace('play_btn', 'audio')).trigger('play');
     }
 
     this.pause = function() {
