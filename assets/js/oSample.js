@@ -75,9 +75,10 @@ function Sample(obj, title, desc, src_audio, src_cover) {
 
     this.seek = function(e) {
         //console.log("pb1 cliked!",e);
-        var percent = e.offsetX / this.prog.offsetWidth;
+        var percent = e.offsetX / this.offsetWidth;
         //console.log(percent);
-        this.audio[0].currentTime = Math.floor(percent * this.audio[0].duration);
+        var audio = $('#' + this.id.replace('prog', 'audio'));
+        audio[0].currentTime = Math.floor(percent * audio[0].duration);
     }
 
     this.showVolumeButton = function(id) {
