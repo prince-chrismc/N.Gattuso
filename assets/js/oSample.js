@@ -1,7 +1,6 @@
 //https://stackoverflow.com/a/20548330/8480874
 
 var g_SongPlaying = false;
-var g_PauseEvent = new CustomEvent("Pause_Song", { detail: "Event to let any playing song know it needs to pause" });
 var g_Array = new Array();
 
 function Sample(obj, title, desc, src_audio, src_cover) {
@@ -40,8 +39,8 @@ function Sample(obj, title, desc, src_audio, src_cover) {
     /* Member Functions */
     this.play = function() {
         for(i = 0; i < g_Array.length; i += 1) {
-            if(g_Array[i].id != this.id.replace('play_btn', ''))
-            g_Array[i].audio[0].dispatchEvent(g_PauseEvent);
+            if(!g_Array[i].audio[0].paused)
+                g_Array[i].pause_btn.trigger('click');
         }
         
         while(g_SongPlaying) { }
@@ -108,7 +107,6 @@ function Sample(obj, title, desc, src_audio, src_cover) {
     this.volume_btn.hover(this.showVolumeSlider);
     this.range.mouseleave(this.showVolumeButton);
     this.audio[0].addEventListener('ended', this.stop);
-    this.audio[0].addEventListener('Pause_Song', this.pause);
     this.prog.click(this.seek);
     this.prog.mousemove(this.setTooltip);
     this.prog.mouseleave(this.removeTooltip);
