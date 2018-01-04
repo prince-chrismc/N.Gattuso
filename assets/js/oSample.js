@@ -1,7 +1,8 @@
 //https://stackoverflow.com/a/20548330/8480874
 
 var g_SongPlaying = false;
-var g_PauseEvent = new CustomEvent("Pause Song", { "detail": "Event to let any playing song know it needs to pause" });
+var g_PauseEvent = new CustomEvent("Pause_Song", { detail: "Event to let any playing song know it needs to pause" });
+var g_Array = new Array();
 
 function Sample(obj, title, desc, src_audio, src_cover) {
 
@@ -9,6 +10,10 @@ function Sample(obj, title, desc, src_audio, src_cover) {
     if( ! $(obj).hasClass('audio_box') ) {
         alert('dumn ass u need to pass a .audio_box!!');
     }
+    
+    // add to list of songs
+    g_Array[g_Array.length] = this;
+    
     this.root = $(obj)[0];
     this.title = title;
     this.desc = desc;
@@ -34,7 +39,11 @@ function Sample(obj, title, desc, src_audio, src_cover) {
 
     /* Member Functions */
     this.play = function() {
-        document.dispatchEvent(g_PauseEvent);
+        for(i = 0; i < g_Array.length; i += 1) {
+            if(g_Array[i].id != this.id.replace('play_btn', ''))
+            g_Array[i].audio[0].dispatchEvent(g_PauseEvent);
+        }
+        
         while(g_SongPlaying) { }
         $(this).toggle();
         $('#' + this.id.replace('play', 'pause')).toggle();
@@ -96,10 +105,10 @@ function Sample(obj, title, desc, src_audio, src_cover) {
     /* event listeners */
     this.play_btn.click(this.play);
     this.pause_btn.click(this.pause);
-    this.root.addEventListener(g_PauseEvent, this.pause);
     this.volume_btn.hover(this.showVolumeSlider);
     this.range.mouseleave(this.showVolumeButton);
     this.audio[0].addEventListener('ended', this.stop);
+    this.audio[0].addEventListener('Pause_Song', this.pause);
     this.prog.click(this.seek);
     this.prog.mousemove(this.setTooltip);
     this.prog.mouseleave(this.removeTooltip);
