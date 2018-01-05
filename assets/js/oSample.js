@@ -125,10 +125,17 @@ function Sample(obj, title, desc, src_audio, src_cover) {
 
     function generateHTML(obj, src_audio, src_cover) {
         var by_text = '';
-        if(obj.root.lang == 'en') by_text = 'by';
-        else if(obj.root.lang == 'fr') by_text = 'par';
+        var alt_text = '';
+        if(obj.root.lang == 'en') {
+            by_text = 'by';
+            alt_text = 'Specialized DJ/VDJ for weddings, corporate and, many more private events.';
+        }
+        else if(obj.root.lang == 'fr') {
+            by_text = 'par';
+            alt_text = 'DJ/VDJ professionnel pour les mariages, corporatif et, plusieurs genres d’évènements speciaux.';
+        }
         
-        obj.root.innerHTML += '<div class="col-sm-6    col-md-4"><img class="media-object" src="' + src_cover + '" alt="..." style="height: 250px; width: auto; max-width: 100%; margin: auto;"></div>';
+        obj.root.innerHTML += '<div class="col-sm-6    col-md-4"><img class="media-object" src="' + src_cover + '" alt="' + alt_text + '" style="height: 250px; width: auto; max-width: 100%; margin: auto;"></div>';
         obj.root.innerHTML += '<div class="col-sm-6    col-md-8"><h2 class="media-heading">' + obj.title + ' ' + by_text + ' <i>N.Gattuso</i></h2><h4>' + obj.desc + '</h4><div class="menu-controls"><i id="play_btn' + obj.id + '" class="fa fa-play fa-3x" data-toggle="tooltip" title="Play"></i><i id="pause_btn' + obj.id + '" class="fa fa-pause fa-3x" data-toggle="tooltip" title="Pause"></i><i id="volume_btn' + obj.id + '" class="fa fa-volume-down fa-3x" data-toggle="tooltip" title="Volume Adjust"></i><div id="range' + obj.id + '" class="range-slider" data-toggle="tooltip" title="Volume Adjust"><input id="slider' + obj.id + '" class="range-slider__range" type="range" value="80" min="0" max="100" step="5" oninput="volume(' + obj.id + ')" for="#audio' + obj.id + '"><span class="range-slider__value">80</span></div></div><div id="prog' + obj.id + '" class="progress" data-toggle="tooltip" title="." data-trigger="manual"><div id="prog_bar' + obj.id + '" class="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div><div class="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div><div class="row"><p id="timestamp' + obj.id + '" style="float: right">0:00</p></div><audio id="audio' + obj.id + '" src="' + src_audio + '" preload="metadata"  ontimeupdate="update(' + obj.id + ');"></audio></div></div>';
     }
     
