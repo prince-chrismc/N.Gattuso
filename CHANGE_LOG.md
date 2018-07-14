@@ -3,9 +3,9 @@ To track modifications to the website's content.
 
 ### Versioning schema
 > 0.x.x - Major: Significant rework of website's user interface
-
+>
 > x.0.x - Minor: New feature or significant rework of an existing module (without changing UI)
-
+>
 > x.x.0 - Fix:   Small tweak(s) which do not impact site's stability
 
 ## Release 1.1.0
