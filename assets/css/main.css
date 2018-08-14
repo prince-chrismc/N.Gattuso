@@ -157,6 +157,14 @@
 {
     background-image: url("../../images/background/soundboard_fireworks.jpg");
 }
+#slideshow #slide7
+{
+    background-image: url("../../images/background/dj_fashionshow.jpg");
+}
+#slideshow #slide8
+{
+    background-image: url("../../images/background/dj_potrait.jpg");
+}
 
 #preload {
     position: fixed;
