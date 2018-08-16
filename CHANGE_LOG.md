@@ -8,6 +8,9 @@ To track modifications to the website's content.
 >
 > x.x.0 - Fix:   Small tweak(s) which do not impact site's stability
 
+## Release 1.1.1
+- Adding new content to index, gallery and samples
+
 ## Release 1.1.0
 - Samples content have been updated to OOJS allowing for future expansion
 - Improved metas and alts for better SEO
