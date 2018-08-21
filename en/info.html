@@ -27,10 +27,10 @@
     </head>
     <body>
         <!--  FB Init -->
-        <script>
+        <!--<script>
           window.fbAsyncInit = function() {
             FB.init({
-              appId            : 'your-app-id',
+              appId            : 2002053813439962,
               autoLogAppEvents : true,
               xfbml            : true,
               version          : 'v3.1'
@@ -53,7 +53,17 @@
            }(document, 'script', 'facebook-jssdk'));
             
 
-        </script>
+        </script> -->
+		
+		<!-- https://developers.facebook.com/docs/plugins/page-plugin -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=2002053813439962&autoLogAppEvents=1';
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
         
         <!-- Header -->
         <header class="navbar navbar-default navbar-fixed-top">
@@ -134,11 +144,13 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
 
+		<div class="fb-page" data-href="https://www.facebook.com/dj.n.gattuso/" data-tabs="timeline, messages" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/dj.n.gattuso/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/dj.n.gattuso/">N.Gattuso</a></blockquote></div>
         <footer class="container-fluid text-center">
             <a href="https://www.facebook.com/music.n.gattuso/" class="icons">
                 <i class="fa fa-facebook fa-2x"></i>
