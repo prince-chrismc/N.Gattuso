@@ -5,5 +5,5 @@ before_install:
   - docker build -t princechrismc/ngattuso:test_$TRAVIS_BUILD_NUMBER .
 
 script:
-  - echo "TO DO"
-  
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push princechrismc/ngattuso:test_$TRAVIS_BUILD_NUMBER
