@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { setTheme } from 'ngx-bootstrap/utils';
 
 @Component({
   selector: 'app-root',
   template: `
   <h1>Universal Demo using Angular and Angular CLI</h1>
-  <a routerLink="/">Home</a>
-  <a routerLink="/lazy">Lazy</a>
-  <a routerLink="/lazy/nested">Lazy_Nested</a>
+  <ol>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/lazy">Lazy</a></li>
+    <li><a routerLink="/lazy/nested">Lazy_Nested</a></li>
+  </ol>
   <router-outlet></router-outlet>
 
   <br>
