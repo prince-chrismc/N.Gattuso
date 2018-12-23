@@ -3,32 +3,7 @@ import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  template: `
-  <h1>Universal Demo using Angular and Angular CLI</h1>
-  <ol>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/lazy">Lazy</a></li>
-    <li><a routerLink="/lazy/nested">Lazy_Nested</a></li>
-  </ol>
-  <router-outlet></router-outlet>
-
-  <br>
-
-  <p>
-    Select a title to set on the current HTML document:
-  </p>
-
-  <ul>
-    <li><a (click)="setTitle( 'Good morning!' )">Good morning</a>.</li>
-    <li><a (click)="setTitle( 'Good afternoon!' )">Good afternoon</a>.</li>
-    <li><a (click)="setTitle( 'Good evening!' )">Good evening</a>.</li>
-  </ul>
-
-  <button type="button" class="btn btn-primary"
-        tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-  Simple demo
-</button>
-  `,
+  templateUrl: './app.component.html',
   styles: []
 })
 export class AppComponent {
