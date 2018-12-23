@@ -1,13 +1,13 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-import {TransferHttpCacheModule} from '@nguniversal/common';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 @NgModule({
   declarations: [
@@ -16,12 +16,12 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     NotFoundComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'ngattuso'}),
+    BrowserModule.withServerTransition({ appId: 'ngattuso' }),
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full'},
-      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
-      { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'},
-      { path: '**',  component: NotFoundComponent }
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule' },
+      { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule' },
+      { path: '**', component: NotFoundComponent }
     ]),
     TransferHttpCacheModule,
   ],
