@@ -31,9 +31,7 @@ import { setTheme } from 'ngx-bootstrap/utils';
   styles: []
 })
 export class AppComponent {
-    public constructor(private titleService: Title ) {
-      setTheme('bs3');
-    }
+    public constructor(private titleService: Title ) { }
 
   public setTitle( newTitle: string) {
     this.titleService.setTitle( newTitle );
