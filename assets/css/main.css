@@ -10,12 +10,20 @@
     transition: margin-right .5s; /* for transition */
     background-color: transparent;
     color: white;
-    margin-top: 64px;
-    margin-bottom: 2em;
-    padding: 4em;
+    margin-top: 32px;
+    margin-bottom: 1em;
+    padding: 2em;
     text-align: center;
     z-index: 1;
     font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+    #banner {
+        margin-top: 64px;
+        margin-bottom: 2em;
+        padding: 4em;
+        }
 }
 
 .content-centered {
@@ -31,7 +39,7 @@
     -ms-transform: translate(-50%, -50%);
 }
 
-@media screen and (max-height: 700px){
+@media screen and (max-height: 496px){
     .content-centered {
         position: relative;
         float: left;
@@ -47,7 +55,7 @@
 }
 
 .dark
-{    
+{
     background-color: rgba(0,0,0,0.75);
     padding: 2em;
 }
@@ -55,7 +63,7 @@
 #banner.content-centered h2{
     font-size: 1.75em;
     line-height: 1.75em;
-} 
+}
 
 #banner p{
     font-size: 1.25em;
