@@ -12,14 +12,14 @@ lighest to darkest
 */
 
 /* basics */
-html{
+
+html {
     height: 100%;
     font-family: 'Roboto', sans-serif;
     overflow: auto;
 }
 
-body
-{
+body {
     font-family: 'Roboto', sans-serif;
     position: fixed;
     top: 0;
@@ -35,7 +35,8 @@ body
 }
 
 /* Header */
-header{
+
+header {
     position: absolute;
     top: 0;
     left: 0;
@@ -47,31 +48,29 @@ header{
     line-height: 2em;
     z-index: 3;
     font-family: 'Roboto', sans-serif;
-    -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
-.navbar-default{
+.navbar-default {
     background-color: #111;
     border-color: black;
     margin: 0;
 }
 
-.navbar-default .navbar-brand
-{
+.navbar-default .navbar-brand {
     font-size: 2em;
     color: white;
 }
 
-.navbar-default .navbar-brand:hover
-{
+.navbar-default .navbar-brand:hover {
     font-size: 2em;
     color: #0059b3;
     text-shadow: 0 0 20px #656565;
 }
 
-.alt{
+.alt {
     background-color: transparent;
     border: none;
     -webkit-box-shadow: none;
@@ -84,13 +83,14 @@ header .menu {
     top: 50%;
     right: 2em;
     transform: translateY(-50%);
-    -webkit-backface-visibility: hidden; /* fix chrome bug */
+    -webkit-backface-visibility: hidden;
+    /* fix chrome bug */
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     font-size: 1.5em;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 header .menu:hover {
@@ -103,13 +103,14 @@ header .lang {
     top: 50%;
     right: 6.5em;
     transform: translateY(-50%);
-    -webkit-backface-visibility: hidden; /* fix chrome bug */
+    -webkit-backface-visibility: hidden;
+    /* fix chrome bug */
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     font-size: 1.5em;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 header .lang:hover {
@@ -117,32 +118,38 @@ header .lang:hover {
     text-shadow: 0 0 20px #656565;
 }
 
-@media screen and (max-width: 768px)
-{
+@media screen and (max-width: 768px) {
     header .lang {
         right: 3.75em;
     }
 }
 
 /* Nav Menu */
+
 #nav2 {
-    height: 100%; /* 100% Full-height */
+    height: 100%;
+    /* 100% Full-height */
     width: 375px;
-    position: fixed; /* Stay in place */
-    z-index: 1031; /* Stay on top */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1031;
+    /* Stay on top */
     top: 0;
-    right: -375px; /* -350px right pos - change this with JavaScript */
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
+    right: -375px;
+    /* -350px right pos - change this with JavaScript */
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
     padding-top: 4.5em;
-    transition: all 0.5s ease-in; /* 0.5 second transition effect to slide in the sidenav */
-    -webkit-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.75);
-    box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.75);
+    transition: all 0.5s ease-in;
+    /* 0.5 second transition effect to slide in the sidenav */
+    -webkit-box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
-@media screen and (max-width: 768px)
-{
+@media screen and (max-width: 768px) {
     #nav2 {
         width: 275px;
         right: -275px;
@@ -191,7 +198,7 @@ header .lang:hover {
     margin-top: -15px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 #nav2 a p {
@@ -204,12 +211,14 @@ header .lang:hover {
 #nav2 .close i {
     margin: 0;
 }
+
 #nav2 hr {
     margin: 0 25px 10px 25px;
     border-color: #444;
 }
 
 /* button */
+
 .main-btn {
     border: 1px solid;
     box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
@@ -230,11 +239,11 @@ header .lang:hover {
 }
 
 .main-btn:hover {
-  border: 1px solid;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
-  outline-color: rgba(255, 255, 255, 0);
-  outline-offset: 15px;
-  text-shadow: 1px 1px 2px #427388;
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
 }
 
 @media screen and (max-width: 768px) {
@@ -251,19 +260,22 @@ header .lang:hover {
     margin-top: 65px;
     color: white;
     background-color: #111;
-    background: -webkit-radial-gradient(circle, #00264d, #001a33, #000d1a); /* For Safari 5.1 to 6.0 */
-    background: -o-radial-gradient(circle, #00264d, #001a33, #000d1a); /* For Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(circle, #00264d, #001a33, #000d1a); /* For Fx 3.6 to 15 */
-    background: radial-gradient(circle, #00264d, #001a33, #000d1a); /* Standard syntax (must be last) */
+    background: -webkit-radial-gradient(circle, #00264d, #001a33, #000d1a);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(circle, #00264d, #001a33, #000d1a);
+    /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, #00264d, #001a33, #000d1a);
+    /* For Fx 3.6 to 15 */
+    background: radial-gradient(circle, #00264d, #001a33, #000d1a);
+    /* Standard syntax (must be last) */
 }
 
 .main-content .title {
-    display:inline-block;
+    display: inline-block;
     text-align: center;
 }
 
-.main-content .title:after,
-.main-content .title:before {
+.main-content .title:after, .main-content .title:before {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     content: " ";
@@ -280,8 +292,7 @@ header .lang:hover {
     text-decoration: underline;
 }
 
-.main-content a:hover,
-.main-content a:active {
+.main-content a:hover, .main-content a:active {
     color: #0059b3;
 }
 
@@ -295,14 +306,15 @@ header .lang:hover {
 }
 
 /* footer */
+
 footer {
     background-color: #111;
     color: white;
     padding: 15px;
-    -webkit-box-shadow: 0px -5px 20px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px -5px 20px 0px rgba(0,0,0,0.75);
-    -o-box-shadow: 0px -5px 20px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px -5px 20px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.75);
+    -o-box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
 footer .icons {
@@ -316,8 +328,7 @@ footer .icons {
     text-decoration: none;
 }
 
-@media screen and (max-width: 400px)
-{
+@media screen and (max-width: 400px) {
     footer .icons {
         margin: 0;
     }
@@ -335,7 +346,7 @@ footer .icons i {
     padding: 5px;
 }
 
-footer  hr {
+footer hr {
     margin: 10px 20% 25px 20%;
     border-color: #222;
 }

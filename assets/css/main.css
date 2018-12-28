@@ -1,4 +1,5 @@
 /* Banner */
+
 #banner {
     position: absolute;
     height: auto;
@@ -7,7 +8,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    transition: margin-right .5s; /* for transition */
+    transition: margin-right .5s;
+    /* for transition */
     background-color: transparent;
     color: white;
     margin-top: 32px;
@@ -23,7 +25,7 @@
         margin-top: 64px;
         margin-bottom: 2em;
         padding: 4em;
-        }
+    }
 }
 
 .content-centered {
@@ -32,21 +34,23 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -webkit-backface-visibility: hidden; /* fix chrome bug */
+    -webkit-backface-visibility: hidden;
+    /* fix chrome bug */
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
 
-@media screen and (max-height: 496px){
+@media screen and (max-height: 496px) {
     .content-centered {
         position: relative;
         float: left;
         top: 0;
         left: 50%;
         transform: translate(-50%, 0);
-        -webkit-backface-visibility: hidden; /* fix chrome bug */
+        -webkit-backface-visibility: hidden;
+        /* fix chrome bug */
         -webkit-transform: translate(-50%, 0);
         -moz-transform: translate(-50%, 0);
         -o-transform: translate(-50%, 0);
@@ -54,48 +58,46 @@
     }
 }
 
-.dark
-{
-    background-color: rgba(0,0,0,0.75);
+.dark {
+    background-color: rgba(0, 0, 0, 0.75);
     padding: 2em;
 }
 
-#banner.content-centered h2{
+#banner.content-centered h2 {
     font-size: 1.75em;
     line-height: 1.75em;
 }
 
-#banner p{
+#banner p {
     font-size: 1.25em;
     line-height: 1.25em;
 }
 
-#banner p red{
+#banner p red {
     color: red;
 }
 
 @media screen and (max-width: 786px) {
-    #banner h2{
+    #banner h2 {
         font-size: 1.5em;
         line-height: 1.5em;
     }
-    
-    #banner p{
-    font-size: 1em;
-    line-height: 1em;
+    #banner p {
+        font-size: 1em;
+        line-height: 1em;
     }
 }
+
 #banner i {
     display: block;
 }
 
 #banner .title {
-    display:inline-block;
+    display: inline-block;
     text-align: center;
 }
 
-#banner .title:after,
-#banner .title:before {
+#banner .title:after, #banner .title:before {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     content: " ";
@@ -107,7 +109,7 @@
     width: 70%;
 }
 
-@media screen and (max-width: 786px){
+@media screen and (max-width: 786px) {
     #banner i {
         font-size: 3em;
     }
@@ -117,12 +119,14 @@
 }
 
 /* Background */
-.video{
+
+.video {
     bottom: 0;
     height: auto;
 }
 
 /* slideshow */
+
 #slideshow {
     width: 100%;
     height: 100%;
@@ -132,7 +136,7 @@
     overflow: hidden;
 }
 
-#slideshow > div {
+#slideshow>div {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -145,32 +149,31 @@
     background-attachment: fixed;
 }
 
-#slideshow #slide1
-{
+#slideshow #slide1 {
     background-image: url("../../images/background/soundboard_light.jpg");
 }
-#slideshow #slide2
-{
+
+#slideshow #slide2 {
     background-image: url("../../images/background/soundboard_side.jpg");
 }
-#slideshow #slide3
-{
+
+#slideshow #slide3 {
     background-image: url("../../images/background/selfie_bw.jpg");
 }
-#slideshow #slide4
-{
+
+#slideshow #slide4 {
     background-image: url("../../images/background/soundboard_dark.jpg");
 }
-#slideshow #slide6
-{
+
+#slideshow #slide6 {
     background-image: url("../../images/background/soundboard_fireworks.jpg");
 }
-#slideshow #slide7
-{
+
+#slideshow #slide7 {
     background-image: url("../../images/background/dj_fashionshow.jpg");
 }
-#slideshow #slide8
-{
+
+#slideshow #slide8 {
     background-image: url("../../images/background/dj_potrait.JPG");
 }
 
@@ -185,6 +188,7 @@
     display: table;
     z-index: 10000;
 }
+
 #preload-status {
     position: absolute;
     width: 100%;

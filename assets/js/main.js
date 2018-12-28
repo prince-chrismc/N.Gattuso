@@ -1,15 +1,16 @@
 /* video background */
-$(document).ready(function() {
+$(document).ready(function () {
     setTimeout(transition, 5000);
 });
 
-function transition()
-{
+function transition() {
     var slideA = $('#slideshow').find('div').last();
-    slideA.fadeOut('slow', function(){
+    slideA.fadeOut('slow', function () {
         slideA.insertBefore($('#slideshow').find('div').first());
         slideA.show();
-        if(slideA.hasClass('video')) { $('#video')[0].play(); }
+        if (slideA.hasClass('video')) {
+            $('#video')[0].play();
+        }
     });
 
     setTimeout(transition, 5000);
@@ -17,22 +18,24 @@ function transition()
 
 // image loader
 $('#slideshow').imagesLoaded()
-    .done( function( instance ) {
+    .done(function (instance) {
         console.log('all images successfully loaded');
         preLoader();
     })
-    .fail( function() {
+    .fail(function () {
         console.log('all images loaded, at least one is broken');
         preLoader();
     })
-    .progress( function( instance, image ) {
+    .progress(function (instance, image) {
         var result = image.isLoaded ? 'loaded' : 'broken';
-        console.log('image is ' + result + ' for ' + image.img.src );
+        console.log('image is ' + result + ' for ' + image.img.src);
     })
-    .always( function( instance ) {
+    .always(function (instance) {
         console.log('loading');
     });
 
 function preLoader() {
-    setTimeout(function() { $('#preload').fadeOut(1000); }, 500);
+    setTimeout(function () {
+        $('#preload').fadeOut(1000);
+    }, 500);
 };
