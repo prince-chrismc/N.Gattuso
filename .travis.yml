@@ -10,8 +10,9 @@ env:
   - DOCKER_TAG=$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER
 
 before_install:
-  - if: branch = master \
-      set DOCKER_TAG "latest"
+  - echo "$DOCKER_TAG"
+  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then \
+       set DOCKER_TAG "latest"
 
 script:
   - docker build -t $DOCKER_USERNAME/ngattuso:$DOCKER_TAG .
