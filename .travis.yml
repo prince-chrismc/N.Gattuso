@@ -7,14 +7,15 @@ services:
   - docker
 
 env:
-  - DOCKER_TAG=$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER
+  - DOCKER_TAG=:$TRAVIS_BRANCH
 
 before_install:
   - echo "$DOCKER_TAG"
   - if [[ "$TRAVIS_BRANCH" == "master" ]]; then \
-       set DOCKER_TAG "latest";
+       unset DOCKER_TAG; \
+    fi
 
 script:
-  - docker build -t $DOCKER_USERNAME/ngattuso:$DOCKER_TAG .
+  - docker build -t $DOCKER_USERNAME/ngattuso$DOCKER_TAG .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push $DOCKER_USERNAME/ngattuso:$DOCKER_TAG
+  - docker push $DOCKER_USERNAME/ngattuso$DOCKER_TAG
