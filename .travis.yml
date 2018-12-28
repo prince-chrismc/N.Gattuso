@@ -11,9 +11,9 @@ env:
 
 before_install:
   - echo "$DOCKER_TAG"
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then \
-       unset DOCKER_TAG; \
-    fi;
+  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+       unset DOCKER_TAG;
+    fi
 
 script:
   - docker build -t $DOCKER_USERNAME/ngattuso$DOCKER_TAG .
