@@ -1,9 +1,19 @@
+# blocklist
+branches:
+  except:
+    - gh-pages # rely on tags
+
 services:
   - docker
 
+env
+  - DOCKER_TAG=$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER
+
 before_install:
-  - docker build -t princechrismc/ngattuso:test_$TRAVIS_BUILD_NUMBER .
+  - if: branch = master \
+      set DOCKER_TAG "latest"
 
 script:
+  - docker build -t $DOCKER_USERNAME/ngattuso:$DOCKER_TAG .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push princechrismc/ngattuso:test_$TRAVIS_BUILD_NUMBER
+  - docker push $DOCKER_USERNAME/ngattuso:$DOCKER_TAG
