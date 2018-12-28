@@ -6,7 +6,7 @@ branches:
 services:
   - docker
 
-env
+env:
   - DOCKER_TAG=$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER
 
 before_install:
