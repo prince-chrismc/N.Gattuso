@@ -42,7 +42,7 @@
     -ms-transform: translate(-50%, -50%);
 }
 
-@media screen and (max-height: 496px) {
+@media screen and (max-height: 768px) {
     .content-centered {
         position: relative;
         float: left;
