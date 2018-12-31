@@ -43,15 +43,15 @@
             <div class="content-centered dark">
                 <div class="row">
                     <div class="col-xs-12">
-                        <i class="fa fa-music fa-4x"></i>
-                        <h1 class="title">DJ N.Gattuso</h1>
+                        <img src="images/logo-purewhite-transparent.png"  style="width: 75%; /*padding: 0 5em;*/"/>
+                        <hr/>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-xs-6">
                         <p lang="en">Choose your language</p>
                     </div>
-                    <div class="col-xs-offset-2 col-xs-6">
+                    <div class="col-xs-6">
                         <form lang="en" action="en/index.html">
                             <button lang="en" type="submit" class="main-btn">English</button>
                         </form>
@@ -78,44 +78,8 @@
         <script src="assets/js/nav.js"></script>
         <script src="assets/js/update.js"></script>
         <script type="text/javascript">
-            var lengthWize = '<div class="content-centered dark">' +
-               '<div class="row"><div class="col-xs-12">' +
-               '    <i class="fa fa-music fa-4x"></i>' +
-               '    <h1 class="title">DJ N.Gattuso</h1>' +
-               '</div></div>' +
-               '<div class="row">' +
-               '    <div class="col-xs-12">' +
-               '        <p lang="en">Choose your language</p>' +
-               '        <p lang="fr">Choisissez votre langue</p>' +
-               '        <hr>' +
-               '    </div>' +
-               '    <div class="col-xs-12">' +
-               '        <form lang="en" action="en/index.html">' +
-               '            <button lang="en" type="submit" class="main-btn">English</button>' +
-               '        </form>' +
-               '        <br>' +
-               '        <form lang="fr" action="fr/index.html">' +
-               '            <button lang="fr" type="submit" class="main-btn">Francais</button>' +
-               '        </form>' +
-               '    </div>' +
-               '</div>' +
-               '</div>';
-            
-            var HandleContent = function(){
-                if( $(window).height() >= 768){
-                    $('#banner').html(lengthWize);
-                } else {
-                    
-                }
-            }
-            
             $(document).ready(function() {
-                HandleContent();
                $('#banner').fadeIn(1000);
-            });
-
-            $(window).resize(function(){
-                HandleContent();
             });
         </script>
     </body>
